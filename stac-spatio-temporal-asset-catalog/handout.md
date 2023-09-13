@@ -15,6 +15,7 @@
 ### STAC Catalog
 - nutzt "Konformitätsklassen" (WAS SIND DAS???!)
 - gibt Links zu anderen Endpunkten, die nach der "STAC API - Core" Spezifikation angelegt werden müssen
+- ein STAC Catalog ist selbst auch wieder der root-endpoint einer STAC API
 
 ### STAC-API
 - Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation (https://github.com/radiantearth/stac-api-spec). Die APi selbst kann auch wieder unterschiedliche Implementierungen haben

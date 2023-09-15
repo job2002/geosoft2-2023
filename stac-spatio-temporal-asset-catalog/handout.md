@@ -1,11 +1,11 @@
-# Was ist der STAC?
+# Was ist der STAC? (TIM)
 - einheitliches Datenformat zur Beschreibung und Katalogisierung von Geodaten
 - der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss. 
 - Nutzt "maturity classifications" um anderen Nutzer:innen zu zeigen, wie wahrscheinlich es ist, dass sich eine Erweiterung in Zukunft ändert
 
-# Warum STAC nutzen?
+# Warum STAC nutzen? (TIM)
 
-## Die STAC-Spezifikation
+## Die STAC-Spezifikation (TIM)
 - besteht aus 4 Teilen:
     - STAC Item, beschreibt ein einzelnes Asset.
     - STAC Catalog, eine JSON Datei mit Links zu einzelnen STAC Items
@@ -16,7 +16,7 @@
 
 Diese nennen wir im folgenden _STAC Ressourcen_.
 
-## Die "STAC Ressourcen"
+## Die "STAC Ressourcen" (TIM)
 ### STAC-Item
 - Eine Datei mit Informationen über die Erde die **an einem bestimmten Raum** zu einer **bestimmten Zeit** erfasst wurden.
 - ein STAC Item ist ein GeoJSON Feature mit weiteren "foreign members"
@@ -49,13 +49,13 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
         - links
     - ist ein Superset eines STAC Catalogs (mit Ausßnahme des "type")
 
-### STAC-API
+### STAC-API (MICHAEL)
 - Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation (https://github.com/radiantearth/stac-api-spec). Die API selbst kann auch wieder unterschiedliche Implementierungen haben
 - hat einen root-endpoint (die sog. "landing page") welche selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt.
 - wird über den GET Endpoint "\<Name eigener STAC>/search?\<searchParams>" erreicht
     - so kann nach STAC Ressourcen gesucht werden
 
-#### Minimalbeispiel
+#### Minimalbeispiel (MICHAEL)
 
 # Unsere Fragen
 - Wie laüft die "Kette der Lizensierung"? Ist es so gedacht, dass eine root-Collection eine Lizenz vorgibt und alle sub-Kataloge auch unter dieser Lizenz laufen oder ist dieser semantische Zusammenhang nicht implizit?

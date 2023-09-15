@@ -1,6 +1,9 @@
 # Was ist der STAC?
 - einheitliches Datenformat zur Beschreibung und Katalogisierung von Geodaten
 - der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss. 
+- Nutzt "maturity classifications" um anderen Nutzer:innen zu zeigen, wie wahrscheinlich es ist, dass sich eine Erweiterung in Zukunft ändert
+
+# Warum STAC nutzen?
 
 ## Die STAC-Spezifikation
 - besteht aus 4 Teilen:
@@ -10,6 +13,10 @@
     - STAC API, RESTful Endpunkt um nach einzelnen STAC Items zu suchen
 
     > Quelle: https://stacspec.org/en
+
+Diese nennen wir im folgenden _STAC Ressourcen_.
+
+## Die "STAC Ressourcen"
 ### STAC-Item
 - Eine Datei mit Informationen über die Erde die **an einem bestimmten Raum** zu einer **bestimmten Zeit** erfasst wurden.
 - ein STAC Item ist ein GeoJSON Feature mit weiteren "foreign members"
@@ -43,10 +50,12 @@
     - ist ein Superset eines STAC Catalogs (mit Ausßnahme des "type")
 
 ### STAC-API
-- Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation (https://github.com/radiantearth/stac-api-spec). Die APi selbst kann auch wieder unterschiedliche Implementierungen haben
+- Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation (https://github.com/radiantearth/stac-api-spec). Die API selbst kann auch wieder unterschiedliche Implementierungen haben
 - hat einen root-endpoint (die sog. "landing page") welche selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt.
+- wird über den GET Endpoint "\<Name eigener STAC>/search?\<searchParams>" erreicht
+    - so kann nach STAC Ressourcen gesucht werden
 
-# Warum STAC nutzen?
-# Wie nutzt man den STAC?
-## Struktur der STAC Ressourcen?
-# Was sind Herausforderungen vom STAC?
+#### Minimalbeispiel
+
+# Unsere Fragen
+- Wie laüft die "Kette der Lizensierung"? Ist es so gedacht, dass eine root-Collection eine Lizenz vorgibt und alle sub-Kataloge auch unter dieser Lizenz laufen oder ist dieser semantische Zusammenhang nicht implizit?

@@ -50,6 +50,31 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
     - ist ein Superset eines STAC Catalogs (mit Ausßnahme des "type")
 
 ### STAC-API (MICHAEL)
+- ist wieder eine Spezifikation, besteht aus 3 Grundspezifikationen:
+    - STAC API - Core
+    - STAC  API - Features
+    - STAC API - ItemSearch
+
+sowie einer Erweiterung durch "Extensions" aus der Community.
+- Rückgaben einer STAC API sind Catalogs, Collections oder Items (als JSON-Objekt) oder eine ItemCollection
+(https://github.com/radiantearth/stac-api-spec#about)
+
+#### STAC API - Core
+- wird diese _Konformitätsklasse_ implementiert, so muss die APi folgende Funktionen bieten:
+    1. einen "/" GET Endpoint, der eine sog. "landing page" bereitsstellt. Dies ist eine [STAC Catalog](#stac-catalog), der alle Sub-Catalogs und/oder STAC Items enthält, die in diesem STAC zur Verfügung stehen.
+    2. einen **"conformsTo"** Schlüssel, URI zu allen Konformitätsklassen angibt, die durch diesen STAC erfüllt werden.
+    3. ein **"links"** Attribut, dass Relationen zu allen in (1.) genannten Features enthält.
+    4. einen "/api" GET Endpoint, der eine "service_desc" zurückgibt. Dieser beschreibt, was die STAC API bietet/leistet.
+- jede STAC API muss mindestens diese _Konformitätsklasse_ implementieren.
+#### Extensions
+- durch die Community entwickelte Erweiterungen zur STAC API/ dem STAC selbst. 
+- werden durch "maturity classification" nach ihrem Entwicklungsgrad geordnet, sodass Nutzer:innen aus der Community sehen können, wie weit die Extension schon entwickelt ist und ob mit häufigen Updates zu rechnen ist.
+
+#### STAC ItemCollection
+- eine ItemCollection ist eine JSON FeatureCollection mit weiteren "foreign members". Sie enthält i.d.R. widerrum Catalogs, Collections und/oder Items.
+(https://github.com/radiantearth/stac-api-spec#about)
+
+
 - Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation (https://github.com/radiantearth/stac-api-spec). Die API selbst kann auch wieder unterschiedliche Implementierungen haben
 - hat einen root-endpoint (die sog. "landing page") welche selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt.
 - wird über den GET Endpoint "\<Name eigener STAC>/search?\<searchParams>" erreicht

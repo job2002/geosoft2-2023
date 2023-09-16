@@ -66,6 +66,8 @@ sowie einer Erweiterung durch "Extensions" aus der Community.
     3. ein **"links"** Attribut, dass Relationen zu allen in (1.) genannten Features enthält.
     4. einen "/api" GET Endpoint, der eine "service_desc" zurückgibt. Dieser beschreibt, was die STAC API bietet/leistet.
 - jede STAC API muss mindestens diese _Konformitätsklasse_ implementieren.
+
+(https://github.com/radiantearth/stac-api-spec/tree/main/core#core)
 #### Extensions
 - durch die Community entwickelte Erweiterungen zur STAC API/ dem STAC selbst. 
 - werden durch "maturity classification" nach ihrem Entwicklungsgrad geordnet, sodass Nutzer:innen aus der Community sehen können, wie weit die Extension schon entwickelt ist und ob mit häufigen Updates zu rechnen ist.

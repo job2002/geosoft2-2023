@@ -63,10 +63,20 @@ sowie einer Erweiterung durch "Extensions" aus der Community.
 - _STAC API - Collections_ erlaubt eine Suche zwischen unterschiedlichen Collections (dies wird derzeit nicht durch _OAFeat_ unterstüzt) (https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features)
 - _STAC API - Features_ legt zwingend fest, dass zurückgebene Features das Format eines [STAC Items](#stac-item) haben. Der OAFeat Standard legt nur fest, das die Rückgabe ein "Feature" sein muss, ohne dessen Struktur näher festzulegen.
 
+#### STAC API - ItemSearch
+- wird diese _Konformitätsklasse_ implementiert, so muss die API folgende Funktionen bieten:
+    1. eine Relation in "links" der "landing page", die auf den "/search" Endpoint verweist.
+    2. einen "/search" GET Endpoint, an den Suchanfragen mit "searchParams" gestellt werden können. Folgende Parameter werden unterstützt:
+        - limit
+        - bbox
+        - datetime
+        - intersects
+        - ids
+        - collections
 
 #### STAC API - Core
 - wird diese _Konformitätsklasse_ implementiert, so muss die API folgende Funktionen bieten:
-    1. einen "/" GET Endpoint, der eine sog. "landing page" bereitsstellt. Dies ist eine [STAC Catalog](#stac-catalog), der alle Sub-Catalogs und/oder [STAC Item](#stac-item)s enthält, die in diesem STAC zur Verfügung stehen.
+    1. einen "/" GET Endpoint, der eine sog. "landing page" bereitsstellt. Dies ist ein [STAC Catalog](#stac-catalog), der alle Sub-Catalogs und/oder [STAC Item](#stac-item)s enthält, die in diesem STAC zur Verfügung stehen.
     2. einen **"conformsTo"** Schlüssel, URI zu allen Konformitätsklassen angibt, die durch diesen STAC erfüllt werden.
         - muss nur im root-Catalog exisitieren
     3. ein **"links"** Attribut, dass Relationen zu allen in (1.) genannten Features enthält.
@@ -98,6 +108,58 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
     - so kann nach STAC Ressourcen gesucht werden
 
 #### Minimalbeispiel (MICHAEL)
+**STAC Item**
+```JSON
+{
+    "stac_version": "1.0.0",
+    "type": "Feature",
+    "id": "1",
+    "bbox": [
+        7.612887627573883,
+        51.96309881413666, 
+        7.613662225863266,
+        51.96417021332829
+        ],
+    "properties": {
+        "name": Schloss Münster,
+    },
+      "geometry": {
+        "coordinates": [
+          7.613129509789644,
+          51.96360648451028
+        ],
+        "type": "Point"
+      },
+    "collection": "gebäude-in-münster",
+    "links": [
+        // URI zu diesem Item
+        {
+            "rel": "self",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/1",
+            "type": "application/geo+json"
+        },
+        // Die root URI aller Collections in diesem STAC
+        {
+            "rel": "root",
+            "href": "http://localhost:3000/collections",
+            "type": "application/json"
+        },
+        // die Eltern Collection dieses Items
+        {
+            "rel": "parent",
+            "href": "http://localhost:3000/collections/gebäude-in-münster",
+            "type": "application/json"
+        },
+        // die Collection, aus der dieses Item stammt
+        {
+            "rel": "collection",
+            "href": "http://localhost:3000/collections/gebäude-in-münster",
+            "type": "application/json"
+        },
+    ],
+    "assets": {}    // in diesem Beispiel existieren keine
+}
+```
 
 # Unsere Fragen
 - Wie laüft die "Kette der Lizensierung"? Ist es so gedacht, dass eine root-Collection eine Lizenz vorgibt und alle sub-Kataloge auch unter dieser Lizenz laufen oder ist dieser semantische Zusammenhang nicht implizit?

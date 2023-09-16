@@ -211,6 +211,31 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
 }
 ```
 
+**STAC Catalog**
+```JSON
+{
+    "stac_version": "1.0.0",
+    "type": "Catalog",
+    "id": "gebäude-in-münster",
+    "title": "Auflistung von Gebäuden aus Münster.",
+    "description": "Dies ist eine Beispielkollektion, daher hat sie keine tiefere Funktion, die man hier im Detail erklären kann.",
+    "links": [
+        {
+            "rel": "item",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/1",
+            "type": "application/geo+json"
+        },
+        {
+            "rel": "item",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/2",
+            "type": "application/geo+json"
+        },
+    ],
+}
+```
+> **Hinweis:** Der STAC Catalog ist in diesem Beipiel nur eine vereinfachte Version der nun folgenden STAC Collection. Er wird daher nicht in der Beispielimplementierung genutzt. (HIER LINK ZUR WEB API DIE WIR NOCH ERSTELLEN EINFÜGEN) 
+
+
 **STAC Collection**
 ```JSON
 {
@@ -220,6 +245,16 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
     "title": "Auflistung von Gebäuden aus Münster.",
     "description": "Dies ist eine Beispielkollektion, daher hat sie keine tiefere Funktion, die man hier im Detail erklären kann.",
     "links": [
+        {
+            "rel": "root",
+            "href": "https://localhost:3000",
+            "type": "application/json",
+        },
+        {
+            "rel": "self",
+            "href": "http://localhost:3000/collections/gebäude-in-münster.json",
+            "type": "application/json"
+        },
         {
             "rel": "item",
             "href": "http://localhost:3000/collections/gebäude-in-münster/items/1",

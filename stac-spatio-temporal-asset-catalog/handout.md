@@ -50,22 +50,36 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
     - ist ein Superset eines STAC Catalogs (mit Ausßnahme des "type")
 
 ### STAC-API (MICHAEL)
+- WAS MACHT DIE STAC API BESSER ALS DIE BESTEHENDE OGC API???
+    - _STAC API - Collections_ erlaubt eine Suche zwischen unterschiedlichen Collections (dies wird derzeit nicht durch _OpenAPI - Features (OAFeat)_ unterstüzt) (https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features)
+    - _STAC API - Features_ legt zwingend fest, dass zurückgebene Features das Format eines [STAC Items](#stac-item) haben. Der OAFeat Standard legt nur fest, das die Rückgabe ein "Feature" sein muss, ohne dessen Struktur näher festzulegen.
+
 - ist wieder eine Spezifikation, besteht aus 3 Grundspezifikationen:
-    - STAC API - Core
-    - STAC  API - Features
-    - STAC API - ItemSearch
+    - _STAC API - Core_
+    - _STAC  API - Collections and Features_
+    - _STAC API - ItemSearch_
 
 sowie einer Erweiterung durch "Extensions" aus der Community.
 - Rückgaben einer STAC API sind Catalogs, Collections oder Items (als JSON-Objekt) oder eine ItemCollection
 (https://github.com/radiantearth/stac-api-spec#about)
 
 #### STAC API - Core
-- wird diese _Konformitätsklasse_ implementiert, so muss die APi folgende Funktionen bieten:
+- wird diese _Konformitätsklasse_ implementiert, so muss die API folgende Funktionen bieten:
     1. einen "/" GET Endpoint, der eine sog. "landing page" bereitsstellt. Dies ist eine [STAC Catalog](#stac-catalog), der alle Sub-Catalogs und/oder STAC Items enthält, die in diesem STAC zur Verfügung stehen.
     2. einen **"conformsTo"** Schlüssel, URI zu allen Konformitätsklassen angibt, die durch diesen STAC erfüllt werden.
+        - muss nur im root-Catalog exisitieren
     3. ein **"links"** Attribut, dass Relationen zu allen in (1.) genannten Features enthält.
     4. einen "/api" GET Endpoint, der eine "service_desc" zurückgibt. Dieser beschreibt, was die STAC API bietet/leistet.
 - jede STAC API muss mindestens diese _Konformitätsklasse_ implementieren.
+
+#### STAC API - Collections and Features
+- legt Endpoints und Relationen fest, die definieren wie die API Zugriff auf Collections und Items im STAC gewährt.
+- Ist aufgeteilt in zwei _Konformitätsklassen_:
+    - _STAC API - Features_
+    - _STAC API - Collections_
+
+diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere Informationen verweisen wir auf die [Dokumentation der STAC API - Collections and Features Konformitätsklasse](https://github.com/radiantearth/stac-api-spec/tree/main/ogcapi-features), da dieses Handout ansonsten seinen Fokus verliert und zu seh abschweift
+
 
 (https://github.com/radiantearth/stac-api-spec/tree/main/core#core)
 #### Extensions

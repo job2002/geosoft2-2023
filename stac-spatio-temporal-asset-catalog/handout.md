@@ -121,7 +121,7 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         51.96417021332829
         ],
     "properties": {
-        "name": Schloss Münster,
+        "name": "Schloss Münster",
     },
       "geometry": {
         "coordinates": [
@@ -157,7 +157,138 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
             "type": "application/json"
         },
     ],
-    "assets": {}    // in diesem Beispiel existieren keine
+    "assets": {}    // wir stellen uns vor, das Asset wäre ein Foto
+}
+
+{
+    "stac_version": "1.0.0",
+    "type": "Feature",
+    "id": "2",
+    "bbox": [
+        7.5998111356582285,
+        51.96523053575359,
+        7.600521395257971,
+        51.96581649639717
+        ],
+    "properties": {
+        "name": "Mensa am Ring",
+    },
+      "geometry": {
+        "coordinates": [
+          7.60018432290525,
+          51.965556894525406
+        ],
+        "type": "Point"
+      },
+    "collection": "gebäude-in-münster",
+    "links": [
+        // URI zu diesem Item
+        {
+            "rel": "self",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/2",
+            "type": "application/geo+json"
+        },
+        // Die root URI aller Collections in diesem STAC
+        {
+            "rel": "root",
+            "href": "http://localhost:3000/collections",
+            "type": "application/json"
+        },
+        // die Eltern Collection dieses Items
+        {
+            "rel": "parent",
+            "href": "http://localhost:3000/collections/gebäude-in-münster",
+            "type": "application/json"
+        },
+        // die Collection, aus der dieses Item stammt
+        {
+            "rel": "collection",
+            "href": "http://localhost:3000/collections/gebäude-in-münster",
+            "type": "application/json"
+        },
+    ],
+    "assets": {}    // wir stellen uns vor, das Asset wäre ein Foto
+}
+```
+
+**STAC Collection**
+```JSON
+{
+    "stac_version": "1.0.0",
+    "type": "Collection",
+    "id": "gebäude-in-münster",
+    "title": "Auflistung von Gebäuden aus Münster.",
+    "description": "Dies ist eine Beispielkollektion, daher hat sie keine tiefere Funktion, die man hier im Detail erklären kann.",
+    "links": [
+        {
+            "rel": "item",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/1",
+            "type": "application/geo+json"
+        },
+        {
+            "rel": "item",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/2",
+            "type": "application/geo+json"
+        },
+    ],
+    "license": "proprietary",
+    "extent": {
+        // räumliche Verteilung der Aufnahmen
+        "spatial": {
+            "bbox": [
+                [
+                    7.599704413618184,
+                    51.96308214659746,
+                    7.613861163919182,
+                    51.96612881575555
+                ]
+            ]
+        },
+        // Datum der Aufnahmen im RFC 3393 Standard
+        "temporal": "2023-09-16T13:56:46+00:00",
+    }
+
+}
+```
+
+**"landing page"**
+```JSON
+{
+    "stac_version": "1.0.0",
+    "id": "münster-stac-api",
+    "title": "simple STAC Implementierung",
+    "description": "Dieser Katalog ist eine Implementierung der STAC API",
+    "type": "Catalog",
+    "conformsTo" : [
+        "https://api.stacspec.org/v1.0.0/core"
+    ],
+    "links": [
+        {
+            "rel": "self",
+            "type": "application/json",
+            "href": "https://localhost:3000"
+        },
+        {
+            "rel": "root",
+            "type": "application/json",
+            "href": "https://localhost:3000"
+        },
+        {
+            "rel": "service-desc",
+            "type": "application/vnd.oai.openapi+json;version=3.0",
+            "href": "https://localhost:3000/api"
+        },
+        {
+            "rel": "service-doc",
+            "type": "text/html",
+            "href": "https://localhost:3000/api.html"
+        },
+        {
+            "rel": "child",
+            "type": "application/json",
+            "href": "https://localhost:3000/catalogs/gebäude-in-münster"
+        },
+    ]
 }
 ```
 

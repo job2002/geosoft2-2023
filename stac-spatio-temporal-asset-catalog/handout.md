@@ -151,7 +151,7 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         {
             "rel": "child",
             "type": "application/json",
-            "href": "http://localhost:3000/gebäude-in-münster/collection.json"
+            "href": "http://localhost:3000/gebaeude-in-muenster"
         },
     ]
 }
@@ -185,29 +185,36 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         // URI zu diesem Item
         {
             "rel": "self",
-            "href": "http://localhost:3000/gebäude-in-münster/1.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/1",
             "type": "application/geo+json"
         },
         // Die root URI aller Collections in diesem STAC
         {
             "rel": "root",
-            "href": "http://localhost:3000/catalog.json",
+            "href": "http://localhost:3000",
             "type": "application/json"
         },
         // die Eltern Collection dieses Items
         {
             "rel": "parent",
-            "href": "http://localhost:3000/gebäude-in-münster/collection.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
             "type": "application/json"
         },
         // die Collection, aus der dieses Item stammt
         {
             "rel": "collection",
-            "href": "http://localhost:3000/gebäude-in-münster/collection.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
             "type": "application/json"
         },
     ],
-    "assets": {}    // wir stellen uns vor, das Asset wäre ein Foto
+    "assets": {
+        "image": 
+        {
+            "href": "https://upload.wikimedia.org/wikipedia/commons/1/1a/M%C3%BCnster%2C_Schloss_--_2014_--_6769-71_(crop).jpg",
+            "title": "Bild vom Schloss Münster",
+            "type": "image/jpeg"
+        }
+    }
 }
 
 {
@@ -235,29 +242,36 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         // URI zu diesem Item
         {
             "rel": "self",
-            "href": "http://localhost:3000/gebäude-in-münster/2.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/2",
             "type": "application/geo+json"
         },
         // Die root URI aller Collections in diesem STAC
         {
             "rel": "root",
-            "href": "http://localhost:3000/catalog.json",
+            "href": "http://localhost:3000",
             "type": "application/json"
         },
         // die Eltern Collection dieses Items
         {
             "rel": "parent",
-            "href": "http://localhost:3000/gebäude-in-münster/collection.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
             "type": "application/json"
         },
         // die Collection, aus der dieses Item stammt
         {
             "rel": "collection",
-            "href": "http://localhost:3000/gebäude-in-münster/collection.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
             "type": "application/json"
         },
     ],
-    "assets": {}    // wir stellen uns vor, das Asset wäre ein Foto
+    "assets": {
+        "image": 
+        {
+            "href": "https://www.uni-muenster.de/news/data/img/2017/09/web-UVnVVcbn-newsML.jpg",
+            "title": "Bild von der Mensa am Ring in Münster",
+            "type": "image/jpeg"
+        }
+    } 
 }
 ```
 
@@ -272,12 +286,12 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
     "links": [
         {
             "rel": "item",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/items/1.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/1",
             "type": "application/geo+json"
         },
         {
             "rel": "item",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/items/2.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/2",
             "type": "application/geo+json"
         },
     ],
@@ -297,22 +311,22 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
     "links": [
         {
             "rel": "root",
-            "href": "https://localhost:3000/catalog.json",
+            "href": "https://localhost:3000",
             "type": "application/json",
         },
         {
             "rel": "self",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/collection.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
             "type": "application/json"
         },
         {
             "rel": "item",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/items/1.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/1",
             "type": "application/geo+json"
         },
         {
             "rel": "item",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/items/2.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/2",
             "type": "application/geo+json"
         },
     ],

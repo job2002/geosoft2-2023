@@ -7,22 +7,22 @@
     "links": [
         {
             "rel": "root",
-            "href": "http://localhost:3000/catalog.json",
+            "href": "http://localhost:3000",
             "type": "application/json"
         },
         {
             "rel": "self",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/collection.json",
+            "href": "http://localhost:3000/collections/gebaeude-in-muenster",
             "type": "application/json"
         },
         {
             "rel": "item",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/items/1.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/1",
             "type": "application/geo+json"
         },
         {
             "rel": "item",
-            "href": "http://localhost:3000/collections/gebäude-in-münster/items/2.json",
+            "href": "http://localhost:3000/gebaeude-in-muenster/2",
             "type": "application/geo+json"
         }
     ],

@@ -31,7 +31,7 @@
         {
             "rel": "child",
             "type": "application/json",
-            "href": "http://localhost:3000/gebäude-in-münster/collection.json"
+            "href": "http://localhost:3000/gebaeude-in-muenster"
         }
     ]
 }

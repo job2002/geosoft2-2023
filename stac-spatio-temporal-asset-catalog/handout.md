@@ -311,7 +311,7 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
     "links": [
         {
             "rel": "root",
-            "href": "https://localhost:3000",
+            "href": "http://localhost:3000",
             "type": "application/json",
         },
         {

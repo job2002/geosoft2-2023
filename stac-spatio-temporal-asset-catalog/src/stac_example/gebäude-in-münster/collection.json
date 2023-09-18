@@ -7,7 +7,7 @@
     "links": [
         {
             "rel": "root",
-            "href": "https://localhost:3000/catalog.json",
+            "href": "http://localhost:3000/catalog.json",
             "type": "application/json"
         },
         {

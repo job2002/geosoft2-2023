@@ -1,0 +1,44 @@
+{
+    "stac_version": "1.0.0",
+    "type": "Collection",
+    "id": "gebäude-in-münster",
+    "title": "Auflistung von Gebäuden aus Münster.",
+    "description": "Dies ist eine Beispielkollektion, daher hat sie keine tiefere Funktion, die man hier im Detail erklären kann.",
+    "links": [
+        {
+            "rel": "root",
+            "href": "https://localhost:3000/catalog.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "self",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/collection.json",
+            "type": "application/json"
+        },
+        {
+            "rel": "item",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/1.json",
+            "type": "application/geo+json"
+        },
+        {
+            "rel": "item",
+            "href": "http://localhost:3000/collections/gebäude-in-münster/items/2.json",
+            "type": "application/geo+json"
+        }
+    ],
+    "license": "proprietary",
+    "extent": {
+        "spatial": {
+            "bbox": [
+                [
+                    7.599704413618184,
+                    51.96308214659746,
+                    7.613861163919182,
+                    51.96612881575555
+                ]
+            ]
+        },
+        "temporal": "2023-09-16T13:56:46+00:00"
+    }
+
+}

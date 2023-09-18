@@ -1,0 +1,52 @@
+{
+    "stac_version": "1.0.0",
+    "type": "Feature",
+    "id": "2",
+    "bbox": [
+        7.5998111356582285,
+        51.96523053575359,
+        7.600521395257971,
+        51.96581649639717
+        ],
+    "properties": {
+        "name": "Mensa am Ring"
+    },
+      "geometry": {
+        "coordinates": [
+          7.60018432290525,
+          51.965556894525406
+        ],
+        "type": "Point"
+      },
+    "collection": "gebäude-in-münster",
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://localhost:3000/gebaeude-in-muenster/2",
+            "type": "application/geo+json"
+        },
+        {
+            "rel": "root",
+            "href": "http://localhost:3000",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "image": 
+        {
+            "href": "https://www.uni-muenster.de/news/data/img/2017/09/web-UVnVVcbn-newsML.jpg",
+            "title": "Bild von der Mensa am Ring in Münster",
+            "type": "image/jpeg"
+        }
+    }   
+}

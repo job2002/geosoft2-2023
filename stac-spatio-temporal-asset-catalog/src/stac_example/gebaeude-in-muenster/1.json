@@ -1,0 +1,52 @@
+{
+    "stac_version": "1.0.0",
+    "type": "Feature",
+    "id": "1",
+    "bbox": [
+        7.612887627573883,
+        51.96309881413666, 
+        7.613662225863266,
+        51.96417021332829
+        ],
+    "properties": {
+        "name": "Schloss Münster"
+    },
+      "geometry": {
+        "coordinates": [
+          7.613129509789644,
+          51.96360648451028
+        ],
+        "type": "Point"
+      },
+    "collection": "gebäude-in-münster",
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://localhost:3000/gebaeude-in-muenster/1",
+            "type": "application/geo+json"
+        },
+        {
+            "rel": "root",
+            "href": "http://localhost:3000",
+            "type": "application/json"
+        },
+        {
+            "rel": "parent",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
+            "type": "application/json"
+        },
+        {
+            "rel": "collection",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
+            "type": "application/json"
+        }
+    ],
+    "assets": {
+        "image": 
+        {
+            "href": "https://upload.wikimedia.org/wikipedia/commons/1/1a/M%C3%BCnster%2C_Schloss_--_2014_--_6769-71_(crop).jpg",
+            "title": "Bild vom Schloss Münster",
+            "type": "image/jpeg"
+        }
+    }
+}

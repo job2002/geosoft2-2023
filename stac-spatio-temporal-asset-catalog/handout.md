@@ -186,7 +186,7 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         ],
         "type": "Point"
       },
-    "collection": "gebäude-in-münster",
+    "collection": "gebaeude-in-muenster",
     "links": [
         // URI zu diesem Item
         {
@@ -243,7 +243,7 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         ],
         "type": "Point"
       },
-    "collection": "gebäude-in-münster",
+    "collection": "gebaeude-in-muenster",
     "links": [
         // URI zu diesem Item
         {

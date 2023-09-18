@@ -18,7 +18,7 @@
         ],
         "type": "Point"
       },
-    "collection": "gebäude-in-münster",
+    "collection": "gebaeude-in-muenster",
     "links": [
         {
             "rel": "self",

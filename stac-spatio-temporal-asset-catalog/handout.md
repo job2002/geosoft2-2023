@@ -50,24 +50,31 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
     - ist ein Superset eines STAC Catalogs (mit Ausßnahme des "type")
 
 ### STAC-API (MICHAEL)
-- Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation (https://github.com/radiantearth/stac-api-spec). Die API selbst kann auch wieder unterschiedliche Implementierungen haben.
+- Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation 
+> Quelle: https://github.com/radiantearth/stac-api-spec.
+
+> Eine Implementierung ist **dynamisch**, wenn der zugrundeliegende [STAC Catalog](#stac-catalog) erweitert/reduziert werden kann und eine Suchmöglichkeit existiert. Durch diesen STAC kann man sich per Suchanfragen navigieren.
+
+Die API selbst kann auch wieder unterschiedliche Implementierungen haben.
+
 - hat einen _root-endpoint_ (die sog. "landing page") welche selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt.
-- wird über den GET Endpoint "\<URL zum STAC>/search?\<searchParams>" erreicht.
-    - so kann nach STAC Ressourcen gesucht werden.
+- wird über den GET Endpoint "\<URL zum STAC>" erreicht.
+    - so kann nach STAC Ressourcen "gesucht" werden.
 - ist wieder eine Spezifikation, besteht aus 3 Grundspezifikationen:
     - _STAC API - Core_
     - _STAC  API - Collections and Features_
     - _STAC API - ItemSearch_
 
 sowie einer Erweiterung durch [Extensions](#extensions) aus der Community.
-- Rückgaben einer STAC API sind [Catalogs](#stac-catalog), [Collections](#stac-collection) oder [Items](#stac-item) (als JSON-Objekt) oder eine [ItemCollection](#stac-itemcollection) (eine FeatureCollection, die widerrum nur _STAC Ressourcen_ enthält)
-(https://github.com/radiantearth/stac-api-spec#about)
+- Rückgaben einer STAC API sind [Catalogs](#stac-catalog), [Collections](#stac-collection) oder [Items](#stac-item) (als JSON-Objekt) oder eine [ItemCollection](#stac-itemcollection) (eine FeatureCollection, die widerrum nur [_STAC Ressourcen_](#die-stac-ressourcen-tim) enthält)
+    > Quelle: https://github.com/radiantearth/stac-api-spec#about
+
 
 #### Unterschied zum OGC API - Features (OAFeat) Standard
 - _STAC API - Collections_ erlaubt eine Suche zwischen unterschiedlichen Collections (dies wird derzeit nicht durch _OAFeat_ unterstüzt). 
-(https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features)
+    > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features
 - _STAC API - Features_ legt zwingend fest, dass zurückgebene Features das Format eines [STAC Items](#stac-item) haben. Der OAFeat Standard legt nur fest, das die Rückgabe ein "Feature" sein muss, ohne dessen Struktur näher festzulegen.
-(https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features)
+    > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features
 #### STAC API - Core
 - wird diese _Konformitätsklasse_ implementiert, so muss die API folgende Funktionen bieten:
     1. einen "/" GET Endpoint, der eine sog. "landing page" bereitsstellt. Dies ist ein [STAC Catalog](#stac-catalog), der alle Sub-Catalogs und/oder [STAC Item](#stac-item)s enthält, die in diesem STAC zur Verfügung stehen.
@@ -76,6 +83,7 @@ sowie einer Erweiterung durch [Extensions](#extensions) aus der Community.
     3. ein **"links"** Attribut, dass Relationen zu allen in (1.) genannten Features enthält.
     4. einen "/api" GET Endpoint, der eine "service_desc" zurückgibt. Dieser beschreibt, was die STAC API bietet/leistet.
 - jede STAC API muss mindestens diese _Konformitätsklasse_ implementieren.
+> Quelle: https://github.com/radiantearth/stac-api-spec/tree/main/core#core
 
 #### STAC API - Collections and Features
 - legt Endpoints und Relationen fest, die definieren wie die API Zugriff auf Collections und Items im STAC gewährt.
@@ -84,9 +92,6 @@ sowie einer Erweiterung durch [Extensions](#extensions) aus der Community.
     - _STAC API - Collections_
 
 diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere Informationen verweisen wir auf die [Dokumentation der STAC API - Collections and Features Konformitätsklasse](https://github.com/radiantearth/stac-api-spec/tree/main/ogcapi-features), da dieses Handout ansonsten seinen Fokus verliert und zu sehr abschweift.
-
-
-(https://github.com/radiantearth/stac-api-spec/tree/main/core#core)
 
 #### STAC API - ItemSearch
 - wird diese _Konformitätsklasse_ implementiert, so muss die API folgende Funktionen bieten:
@@ -100,15 +105,16 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         - collections
 - _STAC API - ItemSearch_ definiert einen einheitlichen Endpoint, um STAC Ressourcen in einer STAC API zu durchsuchen und erhaltene Ergebnisse zu filtern. Dies unterstützt die Nutzbarkeit dieses Standards und erleichtert auch das Arbeiten mit "fremden" STAC Implementierungen. 
 - _STAC API - ItemSearch_ gibt eine kleine Menge an Suchparametern vor. Weitere Suchparameter können im Rahmen von [Extensions](#extensions) durch die Community ergänzt werden.
-(https://github.com/radiantearth/stac-api-spec/tree/main/item-search#overview)
+> Quelle: https://github.com/radiantearth/stac-api-spec/tree/main/item-search#overview
 
 #### Extensions
 - durch die Community entwickelte Erweiterungen zur STAC API/ dem STAC selbst. 
 - werden durch "maturity classification" nach ihrem Entwicklungsgrad geordnet, sodass Nutzer:innen aus der Community sehen können, wie weit die Extension schon entwickelt ist und ob mit häufigen Updates zu rechnen ist.
+> Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/extensions.md#stac-api-extensions
 
-#### STAC ItemCollection
+#### STAC ItemCollection (NOCH OBEN ZU DEN GRUNDBEGRIFFEN SCHIEBEN)
 - eine ItemCollection ist eine JSON FeatureCollection mit weiteren "foreign members". Sie enthält i.d.R. widerrum [Catalogs](#stac-catalog), [Collections](#stac-collection) und/oder [Items](#stac-item).
-(https://github.com/radiantearth/stac-api-spec#about)
+> Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/fragments/itemcollection/README.md#stac-api---itemcollection-fragment
 
 
 
@@ -141,7 +147,7 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         {
             "rel": "service-desc",
             "type": "application/vnd.oai.openapi+json;version=3.0",
-            "href": "http://localhost:3000/api" // NOTE Was für eine Datei mus das sein?
+            "href": "http://localhost:3000/api" 
         },
         {
             "rel": "service-doc",

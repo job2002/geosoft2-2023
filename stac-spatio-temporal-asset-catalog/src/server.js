@@ -42,8 +42,6 @@ APP.get("/gebaeude-in-muenster/2", function(_req, res) {
 // Explicitly tell the client that there is no favicon
 APP.get('/favicon.ico', (req, res) => res.status(204))
 
-// APP.use(EXPRESS.static('static'))
-
 console.log(`Server is running on: http://${host}:${port}`)
 
 APP.listen(port, host)

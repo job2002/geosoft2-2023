@@ -1,13 +1,15 @@
 const EXPRESS = require('express')
 const APP = EXPRESS()
 const PATH = require("path")
-let  landing_page = require("./stac_example/catalog.json")
+
+// safe .json-Files as variables to use them in routes
+let landing_page = require("./stac_example/catalog.json")
 let gebaeude_in_muenster = require("./stac_example/gebaeude-in-muenster/collection.json")
 let item1 = require("./stac_example/gebaeude-in-muenster/1.json")
 let item2 = require("./stac_example/gebaeude-in-muenster/2.json")
 
-const host = 'localhost'
-const port = '3000'
+const HOST = 'localhost'
+const PORT = '3000'
 
 // landing page
 APP.get('/', function(_req, res) {
@@ -42,6 +44,6 @@ APP.get("/gebaeude-in-muenster/2", function(_req, res) {
 // Explicitly tell the client that there is no favicon
 APP.get('/favicon.ico', (req, res) => res.status(204))
 
-console.log(`Server is running on: http://${host}:${port}`)
+console.log(`Server is running on: http://${HOST}:${PORT}`)
 
-APP.listen(port, host)
+APP.listen(PORT, HOST)

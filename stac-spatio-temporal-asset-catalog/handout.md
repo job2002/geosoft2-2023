@@ -131,27 +131,27 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         {
             "rel": "self",
             "type": "application/json",
-            "href": "https://localhost:3000"
+            "href": "http://localhost:3000"
         },
         {
             "rel": "root",
             "type": "application/json",
-            "href": "https://localhost:3000"
+            "href": "http://localhost:3000"
         },
         {
             "rel": "service-desc",
             "type": "application/vnd.oai.openapi+json;version=3.0",
-            "href": "https://localhost:3000/api" // NOTE Was für eine Datei mus das sein?
+            "href": "http://localhost:3000/api" // NOTE Was für eine Datei mus das sein?
         },
         {
             "rel": "service-doc",
             "type": "text/html",
-            "href": "https://localhost:3000/api.html"
+            "href": "http://localhost:3000/api.html"
         },
         {
             "rel": "child",
             "type": "application/json",
-            "href": "https://localhost:3000/gebäude-in-münster/collection.json"
+            "href": "http://localhost:3000/gebäude-in-münster/collection.json"
         },
     ]
 }

@@ -367,7 +367,5 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
 }
 ```
 
-
-
 # Unsere Fragen
 - Wie laüft die "Kette der Lizensierung"? Ist es so gedacht, dass eine root-Collection eine Lizenz vorgibt und alle sub-Kataloge auch unter dieser Lizenz laufen oder ist dieser semantische Zusammenhang nicht implizit?

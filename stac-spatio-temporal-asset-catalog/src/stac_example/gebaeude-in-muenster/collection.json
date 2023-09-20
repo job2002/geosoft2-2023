@@ -12,7 +12,7 @@
         },
         {
             "rel": "self",
-            "href": "http://localhost:3000/collections/gebaeude-in-muenster",
+            "href": "http://localhost:3000/gebaeude-in-muenster",
             "type": "application/json"
         },
         {

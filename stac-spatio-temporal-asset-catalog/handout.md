@@ -1,25 +1,33 @@
 # Was ist der STAC? (SpatioTemporal Asset Catalog)
 - einheitliches Datenformat zur Beschreibung und Katalogisierung von Geodaten
 - der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss. 
+- einige der öffentlich angebotenen STAC Datensätze findest du [hier](https://stacspec.org/en/about/datasets/) (z.B. Sentinel & Landsat Daten)
 - aufbauend auf der Spezifikation gibt es eine Reihe von [Tools](https://stacspec.org/en/about/tools-resources/)
+    - diese decken unter anderem Bereiche wie Client, Server, API und CLI ab, sowie Data Creation, Processing, Visualization und Validation
+    - dabei wird ein breites Spektrum von Programmiersprachen abgedeckt
 - hinter STAC steht eine aktive Community
+    - Anbieter:innen und Nutzer:innen von raumbezogenen Daten
+    - Zusammenarbeit mit anderen Standardisierungsorganisationen (z.B. IETF oder OGC)
+    - Fokus auf Interoperabilität und Open Source
+    - [Gitter-Community](https://gitter.im/SpatioTemporal-Asset-Catalog/Lobby)
+> Quelle: https://stacspec.org/en/about/
 
 # Warum STAC nutzen?
-STAC bietet:
 - Interoperabilität und Zugänglichkeit von raumbezogenen Daten
 - eine Schnittstelle zwischen den unterschiedlichen genutzten Datentypen, -formaten und -sprachen
 - persistente Metadaten
 - technisch einfache Nutzung durch HTML-Ansatz
     - Anbieter benötigt keine großen Datenbanken und Server
-    - einfache Suche über unterschiedliche Suchmaschinen
-- Viele [Erweiterungen](https://github.com/radiantearth/stac-spec/tree/master/extensions) (z. B. für Datacubes oder Punktwolken)
+    - einfache Suche über [STAC Index](https://stacindex.org/) oder unterschiedliche Suchmaschinen
+- viele [Extensions](#extensions) (z. B. für Datacubes oder Punktwolken) 
+> Quelle: https://stacspec.org/en/about/
 
 # Die STAC-Spezifikation
 - besteht aus 4 Teilen:
-    - STAC Item, bindet ein einzelnes Asset in STAC-Strukur ein
+    - STAC Item, Verbindung von einer Geoinformationen, STAC-spezifischen Metadaten und den dazugehörigen Assets
     - STAC Catalog, eine JSON Datei mit Links zu einzelnen STAC Items/Catalogs/Collections
     - STAC Collection, Erweiterung des STAC Catalogs um Informationen zu den Daten (Lizenz, Schlüsselwörter, Quellen der Daten, etc.)
-    - STAC API, RESTful Endpunkt um nach einzelnen STAC Items zu suchen
+    - STAC API, RESTful Endpunkt, um nach einzelnen STAC Items zu suchen und auf diese zuzugreifen
 
     > Quelle: https://stacspec.org/en
 
@@ -28,32 +36,44 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
 ## Die "STAC Ressourcen"
 - sobald ein JSON Objekt die notwendigen Schlüssel einer bestimmten STAC Ressource enthält, wird es als diese angesehen
 - für alle Schlüssel gibt es weitere Spezifikationen, welche Werte hier erwartet werden
+- [Extensions](#extensions) spezifizieren lediglich weitere (Pflicht-)Attribute
+- eine kurze offizielle Einführung findet man auch [hier](https://stacspec.org/en/tutorials/intro-to-stac/)
 ### STAC-Item
-- Eine Datei mit Informationen über die Erde die **an einem bestimmten Raum** zu einer **bestimmten Zeit** erfasst wurden.
-- ein STAC Item ist ein GeoJSON Feature mit weiteren "foreign members"
+- Eine Datei mit Informationen über die Erde, die **an einem bestimmten Raum** zu einer **bestimmten Zeit** erfasst wurden.
+- ein STAC Item ist ein GeoJSON Feature mit weiteren [foreign members](https://www.rfc-editor.org/rfc/rfc7946#section-6.1)
     - es ist also ein Superset eines GeoJSONs
-- Pflichtschlüssel:
-    - type
-    - stac_version
-    - id
-    - geometry
-    - bbox
-    - properties
-    - links
-    - assets
+- Beispiel mit Pflichtschlüsseln:
+    ```json
+    {
+    "stac_version": "1.0.0",
+    "type": "Feature",
+    "id": "20201211_223832_CS2",
+    "bbox": [],
+    "geometry": {},
+    "properties": {},
+    "collection": "simple-collection",
+    "links": [],
+    "assets": {}
+    }
+    ```
 > Quelle und weitere Infos: https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md
+
 ### STAC Catalog
-- nutzt "Konformitätsklassen" (zeigt welche Standards und Erweiterungen die Daten erfüllen)
-- gibt Links zu anderen Endpunkten, die nach der "STAC API - Core" Spezifikation angelegt werden müssen
-- ein STAC Catalog ist selbst auch wieder der root-endpoint einer STAC API
-- Pflichtschlüssel:
-    - type
-    - stac_version
-    - id
-    - description
-    - links
+- gruppiert zusammengehörige STAC-Ressourcen
+- Beispiel mit Pflichtschlüsseln:
+    ```json
+    {
+    "stac_version": "1.0.0",
+    "type": "Catalog",
+    "id": "20201211_223832_CS2",
+    "description": "A simple catalog example",
+    "links": []
+    }
+    ```
 > Quelle und weitere Infos: https://github.com/radiantearth/stac-spec/blob/master/catalog-spec/catalog-spec.md
+
 ### STAC Collection
+- ergänzt Metadaten wie Lizenz, Schlüsselwörter, Zusammenfassung, etc.
 - ist ein Superset eines STAC Catalogs (anhand von "type" unterscheidbar)
     - zusätzliche Pflichtschlüssel:
         - license

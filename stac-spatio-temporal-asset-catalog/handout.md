@@ -134,30 +134,36 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
     "title": "simple STAC Implementierung",
     "description": "Dieser Katalog ist eine Implementierung der STAC API",
     "type": "Catalog",
+    // Links zu den Konformitätklassen, die durch diesen STAC implementiert werden
     "conformsTo" : [
         "https://api.stacspec.org/v1.0.0/core"
     ],
     "links": [
+        // URI zu diesem STAC
         {
             "rel": "self",
             "type": "application/json",
             "href": "http://localhost:3000"
         },
+        // URI zu diesem STAC
         {
             "rel": "root",
             "type": "application/json",
             "href": "http://localhost:3000"
         },
+        // URI zur Service-Description des STACs, also was er für Funktionen bietet
         {
             "rel": "service-desc",
             "type": "application/vnd.oai.openapi+json;version=3.0",
             "href": "http://localhost:3000/api" 
         },
+        // URI zum Service-Document. Wie Service-Description nur als HTML Dokument
         {
             "rel": "service-doc",
             "type": "text/html",
             "href": "http://localhost:3000/api.html"
         },
+        // URI zu weiteren Catalogs/Collections
         {
             "rel": "child",
             "type": "application/json",

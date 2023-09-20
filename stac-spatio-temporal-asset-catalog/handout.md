@@ -1,3 +1,5 @@
+> Handout von [@MichaelBrueggemann](https://github.com/MichaelBrueggemann) und [@TimCi](https://github.com/TimCi).
+
 # Was ist der STAC? (TIM)
 - einheitliches Datenformat zur Beschreibung und Katalogisierung von Geodaten
 - der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss. 

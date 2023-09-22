@@ -76,7 +76,7 @@ sowie einer Erweiterung durch [Extensions](#extensions) aus der Community.
     1. einen "**/**" GET Endpoint, der eine sog. "landing page" bereitsstellt. Dies ist ein [STAC Catalog](#stac-catalog), der alle Sub-Catalogs und/oder [STAC Item](#stac-item)s enthält, die in diesem STAC zur Verfügung stehen.
     2. einen "**conformsTo**" Schlüssel, der URIs zu allen Konformitätsklassen angibt, die durch diesen STAC erfüllt werden.
         - muss nur im root-Catalog exisitieren.
-    3. ein "**links**" Attribut, dass Relationen zu allen in (1.) genannten Features enthält.
+    3. ein "**links**" Attribut, das Relationen zu allen in (1.) genannten Features enthält.
     4. einen "**/api**" GET Endpoint, der eine "service_desc" zurückgibt. Dieser beschreibt, was die STAC API bietet/leistet.
 - jede STAC API muss mindestens diese _Konformitätsklasse_ implementieren.
 > Quelle: https://github.com/radiantearth/stac-api-spec/tree/main/core#core

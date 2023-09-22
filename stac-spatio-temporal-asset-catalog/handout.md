@@ -55,7 +55,7 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
 - Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation.
 > Quelle: https://github.com/radiantearth/stac-api-spec
 
-> Eine Implementierung ist **dynamisch**, wenn man durch den zugrundeliegenden [STAC Catalog](#stac-catalog) per Suchanfragen navigieren kann. Auch gehört dazu, dass die STAC API eine Indexierung der Seiten hat, um leichteres navigieren zu ermöglichen.
+> Eine Implementierung ist **dynamisch**, wenn man durch den zugrundeliegenden [STAC Catalog](#stac-catalog) per Suchanfragen navigieren kann. Dazu gehört auch, dass die STAC API eine Indexierung der Seiten hat, um dieses Navigieren zu vereinfachen.
 
 > Eine Implementierung ist **statisch**, wenn man nur Dateien in einem Dateisystem hat und diese nur auf die jeweils anderen Dateien verlinken. 
 

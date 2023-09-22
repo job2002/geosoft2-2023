@@ -59,7 +59,7 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
 
 > Eine Implementierung ist **statisch**, wenn man nur Dateien in einem Dateisystem hat und diese nur auf die jeweils anderen Dateien verlinken. 
 
-- hat einen _root-endpoint_ (die sog. "landing page") welche selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt.
+- hat einen _root-endpoint_ (die sog. "landing page"), der selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt.
 - wird über den GET Endpoint "\<URL zum STAC>" erreicht.
     - so kann nach STAC Ressourcen "gesucht" werden.
 - ist wieder eine Spezifikation, besteht aus 3 _Konformitätsklassen_:

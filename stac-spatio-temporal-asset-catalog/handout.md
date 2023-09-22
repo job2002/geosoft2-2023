@@ -52,22 +52,22 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
     - ist ein Superset eines STAC Catalogs (mit Ausßnahme des "type")
 
 ### STAC-API (MICHAEL)
-- Die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation.
+- die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation
 > Quelle: https://github.com/radiantearth/stac-api-spec
 
 > Eine Implementierung ist **dynamisch**, wenn man durch den zugrundeliegenden [STAC Catalog](#stac-catalog) per Suchanfragen navigieren kann. Dazu gehört auch, dass die STAC API eine Indexierung der Seiten hat, um dieses Navigieren zu vereinfachen.
 
 > Eine Implementierung ist **statisch**, wenn man nur Dateien in einem Dateisystem hat und diese nur auf die jeweils anderen Dateien verlinken. 
 
-- hat einen _root-endpoint_ (die sog. "landing page"), der selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt.
-- wird über den GET Endpoint "\<URL zum STAC>" erreicht.
+- hat einen _root-endpoint_ (die sog. "landing page"), der selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt
+- wird über den GET Endpoint "\<URL zum STAC>" erreicht
     - so kann nach STAC Ressourcen "gesucht" werden.
 - ist wieder eine Spezifikation, besteht aus 3 _Konformitätsklassen_:
     - _STAC API - Core_
     - _STAC API - Collections and Features_
     - _STAC API - ItemSearch_
 
-sowie einer Erweiterung durch [Extensions](#extensions) aus der Community.
+sowie einer Erweiterung durch [Extensions](#extensions) aus der Community
 - Rückgaben einer STAC API sind [Catalogs](#stac-catalog), [Collections](#stac-collection) oder [Items](#stac-item) (als JSON-Objekt) oder eine [ItemCollection](#stac-itemcollection) (eine FeatureCollection, die widerrum nur [_STAC Ressourcen_](#die-stac-ressourcen-tim) enthält)
     > Quelle: https://github.com/radiantearth/stac-api-spec#about
 
@@ -78,21 +78,21 @@ sowie einer Erweiterung durch [Extensions](#extensions) aus der Community.
         - muss nur im root-Catalog exisitieren.
     3. ein "**links**" Attribut, das Relationen zu allen in (1.) genannten Features enthält.
     4. einen "**/api**" GET Endpoint, der eine "service_desc" zurückgibt. Dieser beschreibt, was die STAC API bietet/leistet.
-- jede STAC API muss mindestens diese _Konformitätsklasse_ implementieren.
+- jede STAC API muss mindestens diese _Konformitätsklasse_ implementieren
 > Quelle: https://github.com/radiantearth/stac-api-spec/tree/main/core#core
 
 #### STAC API - Collections and Features
-- legt Endpoints und Relationen fest, die definieren wie die API Zugriff auf Collections und Items im STAC gewährt.
-- Ist aufgeteilt in zwei _Konformitätsklassen_:
+- legt Endpoints und Relationen fest, die definieren wie die API Zugriff auf Collections und Items im STAC gewährt
+- ist aufgeteilt in zwei _Konformitätsklassen_:
     - _STAC API - Features_
     - _STAC API - Collections_
 
-diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere Informationen verweisen wir auf die [Dokumentation der STAC API - Collections and Features Konformitätsklasse](https://github.com/radiantearth/stac-api-spec/tree/main/ogcapi-features), da dieses Handout ansonsten seinen Fokus verliert und zu sehr abschweift.
+diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere Informationen verweisen wir auf die [Dokumentation der STAC API - Collections and Features Konformitätsklasse](https://github.com/radiantearth/stac-api-spec/tree/main/ogcapi-features), da dieses Handout ansonsten seinen Fokus verliert und zu sehr abschweift
 
 ##### Unterschied zum OGC API - Features (OAFeat) Standard
-- _STAC API - Collections_ erlaubt eine Suche zwischen unterschiedlichen Collections (dies wird derzeit nicht durch _OAFeat_ unterstüzt). 
+- _STAC API - Collections_ erlaubt eine Suche zwischen unterschiedlichen Collections (dies wird derzeit nicht durch _OAFeat_ unterstüzt).
     > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features
-- _STAC API - Features_ legt zwingend fest, dass zurückgegebene Features das Format eines [STAC Items](#stac-item) haben. Der _OAFeat_ Standard legt nur fest, dass die Rückgabe ein "Feature" sein muss, ohne dessen Struktur näher festzulegen.
+- _STAC API - Features_ legt zwingend fest, dass zurückgegebene Features das Format eines [STAC Items](#stac-item) haben. Der _OAFeat_ Standard legt nur fest, dass die Rückgabe ein "Feature" sein muss, ohne dessen Struktur näher festzulegen
     > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features
 
 #### STAC API - ItemSearch
@@ -106,23 +106,23 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         - intersects
         - ids
         - collections
-- _STAC API - ItemSearch_ definiert einen einheitlichen Endpoint, um STAC Ressourcen in einer STAC API zu durchsuchen und erhaltene Ergebnisse zu filtern. Dies unterstützt die Nutzbarkeit dieses Standards und erleichtert auch das Arbeiten mit "fremden" STAC Implementierungen. 
-- _STAC API - ItemSearch_ gibt eine kleine Menge an Suchparametern vor. Weitere Suchparameter können im Rahmen von [Extensions](#extensions) durch die Community ergänzt werden.
+- _STAC API - ItemSearch_ definiert einen einheitlichen Endpoint, um STAC Ressourcen in einer STAC API zu durchsuchen und erhaltene Ergebnisse zu filtern. Dies unterstützt die Nutzbarkeit dieses Standards und erleichtert auch das Arbeiten mit "fremden" STAC Implementierungen
+- _STAC API - ItemSearch_ gibt eine kleine Menge an Suchparametern vor.Weitere Suchparameter können im Rahmen von [Extensions](#extensions) durch die Community ergänzt werden
 > Quelle: https://github.com/radiantearth/stac-api-spec/tree/main/item-search#overview
 
 #### Extensions
-- durch die Community entwickelte Erweiterungen zur STAC API/dem STAC selbst. 
-- werden durch "maturity classification" nach ihrem Entwicklungsgrad geordnet, sodass Nutzer:innen aus der Community sehen können, wie weit die Extension schon entwickelt ist und ob mit häufigen Updates zu rechnen ist.
+- durch die Community entwickelte Erweiterungen zur STAC API/dem STAC selbst
+- werden durch "maturity classification" nach ihrem Entwicklungsgrad geordnet, sodass Nutzer:innen aus der Community sehen können, wie weit die Extension schon entwickelt ist und ob mit häufigen Updates zu rechnen ist
 > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/extensions.md#stac-api-extensions
 
 #### STAC ItemCollection (NOCH OBEN ZU DEN GRUNDBEGRIFFEN SCHIEBEN)
-- eine ItemCollection ist eine JSON FeatureCollection mit weiteren [foreign members](https://www.rfc-editor.org/rfc/rfc7946#section-6.1). Sie enthält i.d.R. widerrum [Catalogs](#stac-catalog), [Collections](#stac-collection) und/oder [Items](#stac-item).
+- eine ItemCollection ist eine JSON FeatureCollection mit weiteren [foreign members](https://www.rfc-editor.org/rfc/rfc7946#section-6.1). Sie enthält i.d.R. widerrum [Catalogs](#stac-catalog), [Collections](#stac-collection) und/oder [Items](#stac-item)
 > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/fragments/itemcollection/README.md#stac-api---itemcollection-fragment
 
 #### Warum sollte man die STAC API nutzen
-- sie bietet einen einheitlichen und flexiblen Zugriff auf Erdinformationen und die damit verbundenen Assets.
-- sie liefert eine Suchfunktion, welche sich durch viele Communityfunktionen stark erweitern lässt.
-- sie gibt die Daten nach außen frei, um diese maschinell abzufragen.
+- sie bietet einen einheitlichen und flexiblen Zugriff auf Erdinformationen und die damit verbundenen Assets
+- sie liefert eine Suchfunktion, welche sich durch viele Communityfunktionen stark erweitern lässt
+- sie gibt die Daten nach außen frei, um diese maschinell abzufragen
 
 
 #### WIE WIRD SICHERGESTELLT, DASS ALLE IMPLEMENTIERUNGEN DIESE STANDARDS EINHALTEN???

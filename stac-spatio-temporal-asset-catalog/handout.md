@@ -75,9 +75,19 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
 ### STAC Collection
 - ergänzt Metadaten wie Lizenz, Schlüsselwörter, Zusammenfassung, etc.
 - ist ein Superset eines STAC Catalogs (anhand von "type" unterscheidbar)
-    - zusätzliche Pflichtschlüssel:
-        - license
-        - extent
+- Beispiel mit zusätzlichen Pflichtschlüsseln:
+    ```json
+    {
+    "stac_version": "1.0.0",
+    "type": "Collection",
+    "license": "ISC",
+    "id": "20201211_223832_CS2",
+    "description": "A simple collection example",
+    "links": [],
+    "extent": {},
+    "summaries": {}
+    }
+    ```
 > Quelle und weitere Infos: https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md
 
 ### STAC-API (MICHAEL)

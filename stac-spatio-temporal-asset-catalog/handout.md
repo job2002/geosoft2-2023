@@ -35,7 +35,7 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
 
 ## Die "STAC Ressourcen"
 - sobald ein JSON Objekt die notwendigen Schlüssel einer bestimmten STAC Ressource enthält, wird es als diese angesehen
-- für alle Schlüssel gibt es weitere Spezifikationen, welche Werte hier erwartet werden
+- für alle Schlüssel gibt es weitere Spezifikationen, welcher Wert für den jeweiligen Schlüssel erwartet wird
 - [Extensions](#extensions) spezifizieren lediglich weitere (Pflicht-)Attribute
 - eine kurze offizielle Einführung findet man auch [hier](https://stacspec.org/en/tutorials/intro-to-stac/)
 ### STAC-Item

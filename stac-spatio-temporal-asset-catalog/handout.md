@@ -92,7 +92,7 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
 ##### Unterschied zum OGC API - Features (OAFeat) Standard
 - _STAC API - Collections_ erlaubt eine Suche zwischen unterschiedlichen Collections (dies wird derzeit nicht durch _OAFeat_ unterstüzt). 
     > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features
-- _STAC API - Features_ legt zwingend fest, dass zurückgebene Features das Format eines [STAC Items](#stac-item) haben. Der _OAFeat_ Standard legt nur fest, das die Rückgabe ein "Feature" sein muss, ohne dessen Struktur näher festzulegen.
+- _STAC API - Features_ legt zwingend fest, dass zurückgegebene Features das Format eines [STAC Items](#stac-item) haben. Der _OAFeat_ Standard legt nur fest, dass die Rückgabe ein "Feature" sein muss, ohne dessen Struktur näher festzulegen.
     > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/overview.md#collections-and-features
 
 #### STAC API - ItemSearch

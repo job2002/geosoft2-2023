@@ -15,6 +15,7 @@
 # Warum STAC nutzen?
 - Interoperabilität und Zugänglichkeit von raumbezogenen Daten
 - eine Schnittstelle zwischen den unterschiedlichen genutzten Datentypen, -formaten und -sprachen
+    - das heißt, dass durch STAC beispielsweise LiDAR-Daten, die typischerweise in dem LAS-Format abgespeichert sind, und als GeoTIFF gespeicherte SAR-Daten, ihre Metadaten in der gleichen STAC-konformen Struktur präsentieren
 - persistente Metadaten
 - technisch einfache Nutzung durch HTML-Ansatz
     - Anbieter benötigt keine großen Datenbanken und Server

@@ -1,5 +1,6 @@
 # Was ist der STAC? (SpatioTemporal Asset Catalog)
 - einheitliches Datenformat zur Beschreibung und Katalogisierung von Geodaten
+- ergänzt und erweitert dafür OGC-Standards
 - der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss. 
 - einige der öffentlich angebotenen STAC Datensätze findest du [hier](https://stacspec.org/en/about/datasets/) (z.B. Sentinel & Landsat Daten)
 - aufbauend auf der Spezifikation gibt es eine Reihe von [Tools](https://stacspec.org/en/about/tools-resources/)

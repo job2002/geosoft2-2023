@@ -1,7 +1,7 @@
 # Was ist der STAC? (SpatioTemporal Asset Catalog)
 - einheitliches Datenformat zur Beschreibung und Katalogisierung von Geodaten
 - ergänzt und erweitert dafür OGC-Standards
-- der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss. 
+- der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss
 - einige der öffentlich angebotenen STAC Datensätze findest du [hier](https://stacspec.org/en/about/datasets/) (z.B. Sentinel & Landsat Daten)
 - aufbauend auf der Spezifikation gibt es eine Reihe von [Tools](https://stacspec.org/en/about/tools-resources/)
     - diese decken unter anderem Bereiche wie Client, Server, API und CLI ab, sowie Data Creation, Processing, Visualization und Validation
@@ -41,7 +41,7 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
 - [Extensions](#extensions) spezifizieren lediglich weitere (Pflicht-)Attribute
 - eine kurze offizielle Einführung findet man auch [hier](https://stacspec.org/en/tutorials/intro-to-stac/)
 ### STAC-Item
-- Eine Datei mit Informationen über die Erde, die **an einem bestimmten Raum** zu einer **bestimmten Zeit** erfasst wurden.
+- eine Datei mit Informationen über die Erde, die **an einem bestimmten Raum** zu einer **bestimmten Zeit** erfasst wurden
 - ein STAC Item ist ein GeoJSON Feature mit weiteren [foreign members](https://www.rfc-editor.org/rfc/rfc7946#section-6.1)
     - es ist also ein Superset eines GeoJSONs
 - Beispiel mit Pflichtschlüsseln:

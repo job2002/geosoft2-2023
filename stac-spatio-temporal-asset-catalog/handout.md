@@ -4,9 +4,9 @@
 # Was ist der STAC? (SpatioTemporal Asset Catalog)
 
 - einheitliches Datenformat zur Beschreibung und Katalogisierung von Geodaten
-- ergänzt und erweitert dafür OGC-Standards
-- der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss
-- einige der öffentlich angebotenen STAC Datensätze findest du [hier](https://stacspec.org/en/about/datasets/) (z.B. Sentinel & Landsat Daten)
+- ergänzt und erweitert die OGC-API-Standards um Kompatibilität mit Geodaten. STAC soll die OGC-API Standards sinnvoll erweitern und keine Konkurrenz/Ersatz zu den OGC Standards darstellen
+- der STAC ist eine Spezifikation, die von den einzelnen Datenanbieter:innen umgesetzt werden muss, wenn diese ihre Datenquelle als "STAC" auszeichnen wollen
+
 - aufbauend auf der Spezifikation gibt es eine Reihe von [Tools](https://stacspec.org/en/about/tools-resources/)
     - diese decken unter anderem Bereiche wie Client, Server, API und CLI ab, sowie Data Creation, Processing, Visualization und Validation
     - dabei wird ein breites Spektrum von Programmiersprachen abgedeckt
@@ -18,8 +18,8 @@
 > Quelle: https://stacspec.org/en/about/
 
 # Warum STAC nutzen?
-- Interoperabilität und Zugänglichkeit von raumbezogenen Daten
-- eine Schnittstelle zwischen den unterschiedlichen genutzten Datentypen, -formaten und -sprachen
+- Interoperabilität und Zugänglichkeit von raumbezogenen Daten wird durch den STAC verbessert
+- bietet eine Schnittstelle zwischen den unterschiedlichen genutzten Datentypen, -formaten und -sprachen
     - das heißt, dass durch STAC beispielsweise LiDAR-Daten, die typischerweise in dem LAS-Format abgespeichert sind, und als GeoTIFF gespeicherte SAR-Daten, ihre Metadaten in der gleichen STAC-konformen Struktur präsentieren
 - persistente Metadaten
 - technisch einfache Nutzung durch HTML-Ansatz
@@ -30,20 +30,21 @@
 
 # Die STAC-Spezifikation
 - besteht aus 4 Teilen:
-    - STAC Item, Verbindung von einer Geoinformationen, STAC-spezifischen Metadaten und den dazugehörigen Assets
-    - STAC Catalog, eine JSON Datei mit Links zu einzelnen STAC Items/Catalogs/Collections
-    - STAC Collection, Erweiterung des STAC Catalogs um Informationen zu den Daten (Lizenz, Schlüsselwörter, Quellen der Daten, etc.)
-    - STAC API, RESTful Endpunkt, um nach einzelnen STAC Items zu suchen und auf diese zuzugreifen
+    - [STAC Item](#stac-item), Verbindung von einer Geoinformationen, STAC-spezifischen Metadaten und den dazugehörigen Assets
+    - [STAC Catalog](#stac-catalog), eine JSON Datei mit Links zu einzelnen STAC Items/Catalogs/Collections
+    - [STAC Collection](#stac-collection), Erweiterung des STAC Catalogs um Informationen zu den Daten (Lizenz, Schlüsselwörter, Quellen der Daten, etc.)
+    - [STAC API](#stac-api), RESTful Endpunkt, um nach einzelnen STAC Items zu suchen und auf diese zuzugreifen
 
     > Quelle: https://stacspec.org/en
 
-Diese nennen wir im folgenden _STAC Ressourcen_.
+Diese nennen wir im folgenden **STAC Ressourcen**
 
 ## Die "STAC Ressourcen"
 - sobald ein JSON Objekt die notwendigen Schlüssel einer bestimmten STAC Ressource enthält, wird es als diese angesehen
 - für alle Schlüssel gibt es weitere Spezifikationen, welcher Wert für den jeweiligen Schlüssel erwartet wird
 - [Extensions](#extensions) spezifizieren lediglich weitere (Pflicht-)Attribute
 - eine kurze offizielle Einführung findet man auch [hier](https://stacspec.org/en/tutorials/intro-to-stac/)
+
 ### STAC-Item
 - eine Datei mit Informationen über die Erde, die **an einem bestimmten Raum** zu einer **bestimmten Zeit** erfasst wurden
 - ein STAC Item ist ein GeoJSON Feature mit weiteren [foreign members](https://www.rfc-editor.org/rfc/rfc7946#section-6.1)
@@ -98,24 +99,24 @@ Diese nennen wir im folgenden _STAC Ressourcen_.
 > Quelle und weitere Infos: https://github.com/radiantearth/stac-spec/blob/master/collection-spec/collection-spec.md
 
 
-### STAC-API (MICHAEL)
+### STAC-API
 - die STAC API ist eine dynamische Version eines STAC, also eine Implementierung der Spezifikation
-> Quelle: https://github.com/radiantearth/stac-api-spec
+    > Quelle: https://github.com/radiantearth/stac-api-spec#about
 
 > Eine Implementierung ist **dynamisch**, wenn man durch den zugrundeliegenden [STAC Catalog](#stac-catalog) per Suchanfragen navigieren kann. Dazu gehört auch, dass die STAC API eine Indexierung der Seiten hat, um dieses Navigieren zu vereinfachen.
 
 > Eine Implementierung ist **statisch**, wenn man nur Dateien in einem Dateisystem hat und diese nur auf die jeweils anderen Dateien verlinken. 
 
-- hat einen _root-endpoint_ (die sog. "landing page"), der selbst ein STAC Catalog ist, welcher zu weiteren STAC Ressourcen verlinkt
+- hat einen _root-endpoint_ (die sog. "landing page"), der selbst ein [STAC Catalog](#stac-catalog) ist, welcher zu weiteren STAC Ressourcen verlinkt
 - wird über den GET Endpoint "\<URL zum STAC>" erreicht
-    - so kann nach STAC Ressourcen "gesucht" werden.
+    - so kann nach [STAC Ressourcen](#die-stac-ressourcen) "gesucht" werden.
 - ist wieder eine Spezifikation, besteht aus 3 _Konformitätsklassen_:
-    - _STAC API - Core_
-    - _STAC API - Collections and Features_
-    - _STAC API - ItemSearch_
+    - [_STAC API - Core_](#stac-api---core)
+    - [_STAC API - Collections and Features_](#stac-api---collections-and-features)
+    - [_STAC API - ItemSearch_](#stac-api---itemsearch)
 
 sowie einer Erweiterung durch [Extensions](#extensions) aus der Community
-- Rückgaben einer STAC API sind [Catalogs](#stac-catalog), [Collections](#stac-collection) oder [Items](#stac-item) (als JSON-Objekt) oder eine [ItemCollection](#stac-itemcollection) (eine FeatureCollection, die widerrum nur [_STAC Ressourcen_](#die-stac-ressourcen-tim) enthält)
+- Rückgaben einer STAC API sind [Catalogs](#stac-catalog), [Collections](#stac-collection) oder [Items](#stac-item) (als JSON-Objekt) oder eine [ItemCollection](#stac-itemcollection) (eine FeatureCollection, die widerrum nur [_STAC Ressourcen_](#die-stac-ressourcen) enthält)
     > Quelle: https://github.com/radiantearth/stac-api-spec#about
 
 #### STAC API - Core
@@ -153,28 +154,31 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
         - intersects
         - ids
         - collections
+    
+        Dieser Endpunkt liefert als Ausgabe eine [ItemCollection](#stac-itemcollection)
 - _STAC API - ItemSearch_ definiert einen einheitlichen Endpoint, um STAC Ressourcen in einer STAC API zu durchsuchen und erhaltene Ergebnisse zu filtern. Dies unterstützt die Nutzbarkeit dieses Standards und erleichtert auch das Arbeiten mit "fremden" STAC Implementierungen
-- _STAC API - ItemSearch_ gibt eine kleine Menge an Suchparametern vor.Weitere Suchparameter können im Rahmen von [Extensions](#extensions) durch die Community ergänzt werden
+- _STAC API - ItemSearch_ gibt eine kleine Menge an Suchparametern vor. Weitere Suchparameter können im Rahmen von [Extensions](#extensions) durch die Community ergänzt werden
 > Quelle: https://github.com/radiantearth/stac-api-spec/tree/main/item-search#overview
+
+##### STAC ItemCollection 
+- eine ItemCollection ist eine JSON FeatureCollection mit weiteren [foreign members](https://www.rfc-editor.org/rfc/rfc7946#section-6.1). Sie enthält i.d.R. widerrum [Catalogs](#stac-catalog), [Collections](#stac-collection) und/oder [Items](#stac-item)
+> Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/fragments/itemcollection/README.md#stac-api---itemcollection-fragment
 
 #### Extensions
 - durch die Community entwickelte Erweiterungen zur STAC API/dem STAC selbst
 - werden durch "maturity classification" nach ihrem Entwicklungsgrad geordnet, sodass Nutzer:innen aus der Community sehen können, wie weit die Extension schon entwickelt ist und ob mit häufigen Updates zu rechnen ist
+- eine Liste der derzeit existierenden Extensions lässt sich hier finden: [Liste von STAC Extensions](https://stac-api-extensions.github.io/)
 > Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/extensions.md#stac-api-extensions
 
-#### STAC ItemCollection (NOCH OBEN ZU DEN GRUNDBEGRIFFEN SCHIEBEN)
-- eine ItemCollection ist eine JSON FeatureCollection mit weiteren [foreign members](https://www.rfc-editor.org/rfc/rfc7946#section-6.1). Sie enthält i.d.R. widerrum [Catalogs](#stac-catalog), [Collections](#stac-collection) und/oder [Items](#stac-item)
-> Quelle: https://github.com/radiantearth/stac-api-spec/blob/main/fragments/itemcollection/README.md#stac-api---itemcollection-fragment
-
-#### Warum sollte man die STAC API nutzen
+#### Warum sollte man die STAC API nutzen?
 - sie bietet einen einheitlichen und flexiblen Zugriff auf Erdinformationen und die damit verbundenen Assets
 - sie liefert eine Suchfunktion, welche sich durch viele Communityfunktionen stark erweitern lässt
 - sie gibt die Daten nach außen frei, um diese maschinell abzufragen
 
 
-#### WIE WIRD SICHERGESTELLT, DASS ALLE IMPLEMENTIERUNGEN DIESE STANDARDS EINHALTEN???
+#### Minimalbeispiel
+Einige der öffentlich angebotenen STAC Datensätze findest du [hier](https://stacspec.org/en/about/datasets/) (z.B. Sentinel & Landsat Daten). Ansonsten folgt nun ein kleines Beispiel unserer eigenen STAC Implementierung:
 
-#### Minimalbeispiel (MICHAEL)
 **"landing page"**
 ```JSON
 {
@@ -423,4 +427,4 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
 ```
 
 # Unsere Fragen
-- Wie laüft die "Kette der Lizensierung"? Ist es so gedacht, dass eine root-Collection eine Lizenz vorgibt und alle sub-Kataloge auch unter dieser Lizenz laufen oder ist dieser semantische Zusammenhang nicht implizit?
+- Wie läuft die "Kette der Lizensierung"? Ist es so gedacht, dass eine root-Collection eine Lizenz vorgibt und alle Sub-Kataloge auch unter dieser Lizenz laufen oder ist dieser semantische Zusammenhang nicht implizit?

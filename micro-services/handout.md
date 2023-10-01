@@ -14,6 +14,7 @@ Der Begriff „Micro-services“ wurde bei einem Softwarearchitekturworkshop im 
 
 ## Literaturverzeichnis
 JAX Blog - Und jetzt? Microservices nach dem Hype
+  
   https://jax.de/blog/microservices-nach-dem-hype/ (abgerufen am 01.10.2023)
 
 msg-group - Sind Microservices die bessere SOA?

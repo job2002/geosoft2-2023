@@ -22,13 +22,12 @@ Micro-services werden angewendet weil sie einige Vorteile im Vergleich zur tradi
 * Services können einzeln getestet und ausgeliefert werden, wodurch insgesamt kürzere Auslieferungszeiträume möglich sind.
 
 **Nachteile**
-
-    * Der dezentrale Ansatz, von Micro-services, ohne irgendeine Art von zentraler Steuerung der einzelnen Services, ist schlecht beherrschbar. Es kann schwierig werden ein Überblick über alle verwendeten * Services zu behalten und die Wiederverwendung von Services zu kontrollieren. Abhilfe dafür schaffen Tools, wie z.b. Kubernetes. (msg-group - Sind Microservices die bessere SOA?).
-    * Es gibt kein einheitliche Vorgehensbeschränkung. Ist ein Micro-service nun eine eigenständige Webanwendung mit Benutzeroberfläche oder wirklich nur ein Webservice der auf anderem Wege integriert werden muss (msg-group - Sind Microservices die bessere SOA?).
-    * Micro-services akzeptieren ein gewisses Maß an Redundanz zwischen Services, wie jedoch die Verteilung und der Abgleich der Daten erfolgt, darüber macht der Architekturstil Micro-services keine Aussage (msg-group - Sind Microservices die bessere SOA?).
-    * Es gibt für viele Herausforderungen noch keine Standardlösungen (msg-group - Sind Microservices die bessere SOA?).
-    Wenn ein Service nicht erreichbar ist kann keine Kommunikation zwischen zwei Services stattfinden. Ggf. wird auf ein anderen Service zugegriffen und dadurch ein anderes ggf. falsches Ergebnisse erhalten.
-    Datenbanken werden voneinander separiert. Fremdschlüssel-Verknüpfungen zwischen zwei Micro-services sind nicht mehr möglich. Die Aufrechterhaltung der Datenintegrität wird auf den Anwendungsbereich verschoben.
+* Der dezentrale Ansatz, von Micro-services, ohne irgendeine Art von zentraler Steuerung der einzelnen Services, ist schlecht beherrschbar. Es kann schwierig werden ein Überblick über alle verwendeten * Services zu behalten und die Wiederverwendung von Services zu kontrollieren. Abhilfe dafür schaffen Tools, wie z.b. Kubernetes. (msg-group - Sind Microservices die bessere SOA?).
+* Es gibt kein einheitliche Vorgehensbeschränkung. Ist ein Micro-service nun eine eigenständige Webanwendung mit Benutzeroberfläche oder wirklich nur ein Webservice der auf anderem Wege integriert werden muss (msg-group - Sind Microservices die bessere SOA?).
+* Micro-services akzeptieren ein gewisses Maß an Redundanz zwischen Services, wie jedoch die Verteilung und der Abgleich der Daten erfolgt, darüber macht der Architekturstil Micro-services keine Aussage (msg-group - Sind Microservices die bessere SOA?).
+* Es gibt für viele Herausforderungen noch keine Standardlösungen (msg-group - Sind Microservices die bessere SOA?).
+* Wenn ein Service nicht erreichbar ist kann keine Kommunikation zwischen zwei Services stattfinden. Ggf. wird auf ein anderen Service zugegriffen und dadurch ein anderes ggf. falsches Ergebnisse erhalten.
+* Datenbanken werden voneinander separiert. Fremdschlüssel-Verknüpfungen zwischen zwei Micro-services sind nicht mehr möglich. Die Aufrechterhaltung der Datenintegrität wird auf den Anwendungsbereich verschoben.
 
 ## Wie Funktionieren Micro-services? How?
 

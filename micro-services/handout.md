@@ -89,25 +89,20 @@ Das in der Abbildung dargestellte Beispiel für die Verwaltung von Micro-service
 
 ## Literaturverzeichnis
 JAX Blog - Und jetzt? Microservices nach dem Hype
-  
   https://jax.de/blog/microservices-nach-dem-hype/ (abgerufen am 01.10.2023)
   
 
 msg-group - Sind Microservices die bessere SOA?
-  
   https://publikation.msg.group/publikationsarchiv/fachartikel/158-beitrag-im-public-kundenmagazin-sind-microservices-die-bessere-soa/file (abgerufen am 01.10.2023)
   
 
 martinfowler - Mikrodienste eine Definition dieses neuen Architekturbegriffs
-
   https://martinfowler-com.translate.goog/articles/microservices.html?_x_tr_sl=en&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=rq (abgerufen am 01.10.2023)
   
 
 DZone - Manage Microservices With Docker Compose
-  
   https://dzone.com/articles/manage-microservices-with-docker-compose (abgerufen am 02.10.2023)
   
   
 Docker-docs - Use Docker Compose
-  
   https://docs.docker.com/get-started/08_using_compose/ abgerufen am 02.10.2023)

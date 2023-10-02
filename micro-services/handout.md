@@ -93,6 +93,7 @@ JAX Blog - Und jetzt? Microservices nach dem Hype
   https://jax.de/blog/microservices-nach-dem-hype/ (abgerufen am 01.10.2023)
   
 
+
 msg-group - Sind Microservices die bessere SOA?
 
   https://publikation.msg.group/publikationsarchiv/fachartikel/158-beitrag-im-public-kundenmagazin-sind-microservices-die-bessere-soa/file (abgerufen am 01.10.2023)

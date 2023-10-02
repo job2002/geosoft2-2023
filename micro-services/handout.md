@@ -30,6 +30,7 @@ Micro-services werden angewendet weil sie einige Vorteile im Vergleich zur tradi
 * Datenbanken werden voneinander separiert. Fremdschlüssel-Verknüpfungen zwischen zwei Micro-services sind nicht mehr möglich. Die Aufrechterhaltung der Datenintegrität wird auf den Anwendungsbereich verschoben.
 
 ## Wie Funktionieren Micro-services? How?
+![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.]([https://myoctocat.com/assets/images/base-octocat.svg](https://martinfowler.com/articles/microservices/images/sketch.png))
 
 ## Wann macht der Einsatz von Micro-services Sinn? When?
 

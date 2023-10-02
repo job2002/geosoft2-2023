@@ -50,7 +50,7 @@ Micro-services können als Docker-Container umgesetzt werden. Damit bietet Docke
 
 Damit die Verwaltung der Micro-services über Docker Compose geschehe kann, muss zunächst für jeden Services ein Dockerfile erstellt werden. In diesen werden alle benötigten Befehle eingerichtet um aus dem Service ein Image zu erstellen. Aus dem Image kann dann ein Container gebaut werden, welches ein Softwarepaket darstellt, das alles enthält, was zum Ausführen eines Services als Anwendung erforderlich ist.
 
-**Aufbau eines Dockerfile**
+**Aufbau eines Dockerfile** <br />
 FROM -> Spezifiziert das Basis-Image.
 LABLE -> Liefert Metadaten. Wer stellt das File bereit?
 COPY -> Kopiert Dateien und Verzeichnisse in den Container.
@@ -59,12 +59,11 @@ ENTRYPOINT -> Stellt Befehle und Argumente für einen ausführenden Container be
 Weitere Dockerfile-Befehle können unter folgenden Link nachgeschlagen werden: <br />
 https://dzone.com/articles/understanding-dockerfile
 
-**Docker Compose**
+**Docker Compose** <br />
 Mit Docker-Compose können YAML-Dateien erstellt werden, um die einzelnen Services und deren Abhängigkeiten zu definieren. Der große Vorteil von Docker-Compose besteht darin, dass alle verwendeten Services in einer Datei aufgelistet sind und es anderen eine einfache Möglichkeit bietet, weitere Services zum Projekt hinzuzufügen (Docker-docs - Use Docker Compose).
 Eine YAML-Datei enthält Containerdetails, Konfigurationen und Befehle, die von Docker-Compose ausgeführt werden. Jeder Service kann dabei, spezifische Unterpunkten beinhaltet (DZone - Manage Microservices With Docker Compose).
 
-**Aufbau eines Docker-compose.yml**
-
+**Aufbau eines Docker-compose.yml** <br />
 ```
 services:
 	mongo-db:

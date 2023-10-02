@@ -86,6 +86,7 @@ https://docs.docker.com/get-started/08_using_compose/
 Das in der Abbildung dargestellte Beispiel für die Verwaltung von Micro-services über Docker-Compose, kann über folgenden Link detailliert nachvollzogen werden.
 ![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://dz2cdn3.dzone.com/storage/temp/16332748-1666720612139.png)
 
+
 ## Literaturverzeichnis
 JAX Blog - Und jetzt? Microservices nach dem Hype
   

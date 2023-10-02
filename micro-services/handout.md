@@ -88,8 +88,7 @@ Das in der Abbildung dargestellte Beispiel für die Verwaltung von Micro-service
 
 
 ## Literaturverzeichnis
-JAX Blog - Und jetzt? Microservices nach dem Hype
-
+JAX Blog - Und jetzt? Microservices nach dem Hype <br />
   https://jax.de/blog/microservices-nach-dem-hype/ (abgerufen am 01.10.2023)
   
 

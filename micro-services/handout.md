@@ -56,7 +56,7 @@ LABLE -> Liefert Metadaten. Wer stellt das File bereit?
 COPY -> Kopiert Dateien und Verzeichnisse in den Container.
 ENTRYPOINT -> Stellt Befehle und Argumente für einen ausführenden Container bereit.
 
-Weitere Dockerfile-Befehle können unter folgenden Link nachgeschlagen werden:
+Weitere Dockerfile-Befehle können unter folgenden Link nachgeschlagen werden: <br />
 https://dzone.com/articles/understanding-dockerfile
 
 **Docker Compose**
@@ -79,7 +79,7 @@ services:
 	        - mongo-db
 	    ...
 ```
-Weitere Docker-compose.yml Befehle können unter folgenden Link nachgeschlagen werden:
+Weitere Docker-compose.yml Befehle können unter folgenden Link nachgeschlagen werden: <br />
 https://docs.docker.com/compose/compose-file/05-services/
 https://docs.docker.com/get-started/08_using_compose/
 

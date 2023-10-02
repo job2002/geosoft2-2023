@@ -13,14 +13,13 @@ Micro-services ist ein Software-Architekturstil, bei dem die Software aus einem 
 Micro-services werden angewendet weil sie einige Vorteile im Vergleich zur traditionellen Monolithischen Softwarearchitektur aufweisen.
 
 **Vorteile**
-
-    * Micro-services erzwingen eine Aufteilung der einzelnen Services einer Anwendung.
-    * Durch die Unabhängigkeit der Micro-services voneinander, ist die Entwicklung und Anpassung der gesamten Anwendung schneller und agiler.
-    * Micro-services sind schnell skalierbar.
-    * Enge Absprach zwischen den Teams ist nicht erforderlich.
-    * Es können keine unerwünschten und versteckten Abhängigkeiten zwischen Services/Funktionen entstehen.
-    * Die einzelnen Services können mit unterschiedlichen Technologien, Versionen und Sprachen entwickelt werden. Große und risikoreiche Technologie-Update können vermieden werden.
-    * Services können einzeln getestet und ausgeliefert werden, wodurch insgesamt kürzere Auslieferungszeiträume möglich sind.
+* Micro-services erzwingen eine Aufteilung der einzelnen Services einer Anwendung.
+* Durch die Unabhängigkeit der Micro-services voneinander, ist die Entwicklung und Anpassung der gesamten Anwendung schneller und agiler.
+* Micro-services sind schnell skalierbar.
+* Enge Absprach zwischen den Teams ist nicht erforderlich.
+* Es können keine unerwünschten und versteckten Abhängigkeiten zwischen Services/Funktionen entstehen.
+* Die einzelnen Services können mit unterschiedlichen Technologien, Versionen und Sprachen entwickelt werden. Große und risikoreiche Technologie-Update können vermieden werden.
+* Services können einzeln getestet und ausgeliefert werden, wodurch insgesamt kürzere Auslieferungszeiträume möglich sind.
 
 **Nachteile**
 

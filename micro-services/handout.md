@@ -33,21 +33,64 @@ Micro-services werden angewendet weil sie einige Vorteile im Vergleich zur tradi
 ![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://martinfowler.com/articles/microservices/images/sketch.png)
 Unterschied zwischen Monolith-Architektur und Micro-service-Architektur:
 
-| Spalte 1 | Spalte 2 | Spalte 3 |
-| -------- | -------- | -------- |
-| Inhalt   | Inhalt   | Inhalt   |
-| Inhalt   | Inhalt   | Inhalt   |
+| Spalte 1 | Spalte 2 |
+| -------- | -------- |
+| Inhalt   | Inhalt   |
+| Inhalt   | Inhalt   |
 
 
 ## Wann macht der Einsatz von Micro-services Sinn? When?
 
-## Fragen: Warum können MS scheitern? Was sind alternativen zu MS?
+## Wie können Micro-services mit Docker-Compose verwaltet werden?
+Micro-services können als Docker-Container umgesetzt werden. Damit bietet Docker-Compose eine Möglichkeit, Micro-services zu koordinieren und deren konsistente Kommunikation sicherzustellen (DZone - Manage Microservices With Docker Compose).
 
+* Dockerfile: Ist ein Textdokument, das Anweisungen zum Erstellen von Docker-Images enthält.
+* Docker-Image: Docker-Images fungieren als eine Reihe von Anweisungen zum Erstellen eines Docker-Containers.
+* Docker-Container: Ist ein leichtes, eigenständiges, ausführbares Softwarepaket, das alles enthält, was zum Ausführen einer Anwendung erforderlich ist.
+
+Damit die Verwaltung der Micro-services über Docker Compose geschehe kann, muss zunächst für jeden Services ein Dockerfile erstellt werden. In diesen werden alle benötigten Befehle eingerichtet um aus dem Service ein Image zu erstellen. Aus dem Image kann dann ein Container gebaut werden, welches ein Softwarepaket darstellt, das alles enthält, was zum Ausführen eines Services als Anwendung erforderlich ist.
+
+**Aufbau eines Dockerfile**
+FROM -> Spezifiziert das Basis-Image.
+LABLE -> Liefert Metadaten. Wer stellt das File bereit?
+COPY -> Kopiert Dateien und Verzeichnisse in den Container.
+ENTRYPOINT -> Stellt Befehle und Argumente für einen ausführenden Container bereit.
+
+Weitere Dockerfile-Befehle können unter folgenden Link nachgeschlagen werden:
+https://dzone.com/articles/understanding-dockerfile
+
+**Docker Compose**
+Mit Docker-Compose können YAML-Dateien erstellt werden, um die einzelnen Services und deren Abhängigkeiten zu definieren. Der große Vorteil von Docker-Compose besteht darin, dass alle verwendeten Services in einer Datei aufgelistet sind und es anderen eine einfache Möglichkeit bietet, weitere Services zum Projekt hinzuzufügen (Docker-docs - Use Docker Compose).
+Eine YAML-Datei enthält Containerdetails, Konfigurationen und Befehle, die von Docker-Compose ausgeführt werden. Jeder Service kann dabei, spezifische Unterpunkten beinhaltet (DZone - Manage Microservices With Docker Compose).
+
+**Aufbau eines Docker-compose.yml**
+
+```
+services:
+	mongo-db:
+	    container_name:  mongo-db  
+	    image: mongodb
+	    port:
+	        - '8888:8888'
+	    ...
+	config-server:
+	    container_name: config-server
+	    depents_on:
+	        - mongo-db
+	    ...
+```
+Weitere Docker-compose.yml Befehle können unter folgenden Link nachgeschlagen werden:
+https://docs.docker.com/compose/compose-file/05-services/
+https://docs.docker.com/get-started/08_using_compose/
+
+Das in der Abbildung dargestellte Beispiel für die Verwaltung von Micro-services über Docker-Compose, kann über folgenden Link detailliert nachvollzogen werden.
+![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://dz2cdn3.dzone.com/storage/temp/16332748-1666720612139.png)
 
 ## Literaturverzeichnis
 JAX Blog - Und jetzt? Microservices nach dem Hype
   
   https://jax.de/blog/microservices-nach-dem-hype/ (abgerufen am 01.10.2023)
+  
 
 msg-group - Sind Microservices die bessere SOA?
   
@@ -57,3 +100,13 @@ msg-group - Sind Microservices die bessere SOA?
 martinfowler - Mikrodienste eine Definition dieses neuen Architekturbegriffs
 
   https://martinfowler-com.translate.goog/articles/microservices.html?_x_tr_sl=en&_x_tr_tl=de&_x_tr_hl=de&_x_tr_pto=rq (abgerufen am 01.10.2023)
+  
+
+DZone - Manage Microservices With Docker Compose
+  
+  https://dzone.com/articles/manage-microservices-with-docker-compose (abgerufen am 02.10.2023)
+  
+  
+Docker-docs - Use Docker Compose
+  
+  https://docs.docker.com/get-started/08_using_compose/ abgerufen am 02.10.2023)

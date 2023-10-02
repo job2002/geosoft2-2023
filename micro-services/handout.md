@@ -44,7 +44,7 @@ Unterschied zwischen Monolith-Architektur und Micro-service-Architektur:
 ## Wie können Micro-services mit Docker-Compose verwaltet werden?
 Micro-services können als Docker-Container umgesetzt werden. Damit bietet Docker-Compose eine Möglichkeit, Micro-services zu koordinieren und deren konsistente Kommunikation sicherzustellen (DZone - Manage Microservices With Docker Compose).
 
-* Dockerfile: Ist ein Textdokument, das Anweisungen zum Erstellen von Docker-Images enthält.
+* Docker-File: Ist ein Textdokument, das Anweisungen zum Erstellen von Docker-Images enthält.
 * Docker-Image: Docker-Images fungieren als eine Reihe von Anweisungen zum Erstellen eines Docker-Containers.
 * Docker-Container: Ist ein leichtes, eigenständiges, ausführbares Softwarepaket, das alles enthält, was zum Ausführen einer Anwendung erforderlich ist.
 

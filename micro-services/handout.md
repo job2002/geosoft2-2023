@@ -33,13 +33,54 @@ Micro-services werden angewendet weil sie einige Vorteile im Vergleich zur tradi
 ![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://martinfowler.com/articles/microservices/images/sketch.png) <br />
 Unterschied zwischen Monolith-Architektur und Micro-service-Architektur:
 
-| Spalte 1 | Spalte 2 |
+| Monolith-Architektur | Microservice-Architektur |
 | -------- | -------- |
-| Inhalt   | Inhalt   |
-| Inhalt   | Inhalt   |
+| Alle Services sind Teil einer Einheit | Anwendung besteht aus mehreren kleinen Services   |
+| Entwicklung und Ausliferung geschieht als eine EInheit.   | Services sollten unabhängig voneinander und in sich geschlossen sein  |
+| Anwendung basiert und läuft auf einer Technologie unter Verwendung einer vordefinierten Sprache und auf einer Laufzeitumgebung. |  Jeder Service kan eigenständig entwickelt, installiert, betrieben, überwacht und ausgeliefert werden. |
+| Organisation der Teammitglieder geschieht vor allem auf technischer Ebene. (Ein Team für die Benutzeroberfläche, ein Team für die Datenhaltung, ein Team für die Geschäftslogik.) | Services können aber natürlich untereinander interagieren. |
+| | Die Aufteilung der Services für eine Anwendung erfolgt zumeist anhand der Geschäftsfunktionalitäten (Bsp. Useraccount, Produkte, Bezahlung) und nicht nach der technischen Funktionalität. |
+|  | Ein Service sollte immer nur eine Geschäftsfunktionalitäten (Aufgabe) beinhalten/abarbeiten. Dadurch haben Micro-services auch Auswirkung auf die Organisation der Teammitglieder. |
+|  | Teams werden gebildet nach Geschäftsfunktionalitäten (Ein Team für den Useraccount, eins für die Produkte etc.)|
 
+Microservices werden oft mit monolithischer Softwareachritektur verglichen.
+Monolithische Architektur ist vergleichbar mit einer All-in-one Küchenmaschine, die den Teig rührt, knetet, ruhen lässt und anschließend backt.
+Microservices dagegen sind kleine klar definierte Komponenten, die die Lösung eines Problems übernehmen und nür über eine Schnittstelle (API) kommunizieren.
+
+Würde man die All-in-one Küchenmaschine in Microservices umwandeln wollen, würden wir zuerst die einzelnen zu lösenden Aufgaben herauskristallisierien. In dem Küchenmaschinenbeispiel würden folgende zu lösende Aufgaben entstehen:
+
+- rühren
+- kneten
+- backen
+  
+Für das Rühren, das Kneten und das Backen würden wir jeweils einen eigenen Microservice enwtickeln und bereitsstellen. Den Mixer, das Knetgerät und einen Backofen.
+Dafür könnten drei Teams gebildet werden, die je ein Microservice entwickeln. Durch die Unabhängigkeit der einzelnen Komponenten muss nicht auf den Fortschritt eines anderen Teams gewartet werden. Die drei Teams können die Entwicklung parallel starten und durchführen.
+
+
+**Kommunikation**
+Auch bei Microservices können Abhängigkeiten untereinander entstehen. Diese sollten so gering wie möglich gehalten werden, da es sonst dem Prinzip der Microservice-Architektur widerspricht.
+Für die Kommunikation zwischen den verschiedenen Microservices gibt es zwei Ansätze. Die bevorzugte “Asynchrone Kommunikation” und die “Synchrone Kommunikation”.
+Bei der Asynchronen Kommunikation werden Nachrichten geschickt, ohne auf eine direkte Antwort (Abhängigkeit) warten zu müssen. Dieses Prinzip kann mit Hilfe eines Messaging-Systems realisiert werden. An dieses System können Nachrichten/Anfragen gesendet werden (ähnlich wie eine Warteschlange), die von anderen Microservices bearbeitet werden. Dadurch ist die Kapselung und die Unabhängigkeit der Microservices untereinander so weit es geht gegeben.
+![Asynchrone Kommunikation](https://cdnp-sdxhomepage-static-prod.azureedge.net/wp-content/uploads/2016/10/micorservices-3.2.jpg)
+
+Bei der Synchronen Kommunikation, wird auf eine direkte Antwort gewartet, wodurch Abhängigkeiten entstehen. Um diese so gering wie möglich zu halten, sollten die Aufrufe nur in einer Richtung verlaufen.
+![Synchrone Kommunikation](https://cdnp-sdxhomepage-static-prod.azureedge.net/wp-content/uploads/2016/09/microservices5-e1477492451414.jpg)
+
+https://www.sdx-ag.de/2016/11/microservices-kommunikation/
+
+Aber was spricht für diese Vorgehensweise? Wann könnte es Sinn machen auf eine monolithische Architektur zuverzichten und sein Programm in Microservices zu unterteilen?
 
 ## Wann macht der Einsatz von Micro-services Sinn? When?
+Es gibt keine Einheitliche Definition, ab wann der Einsatz von Micro-services Sinn macht. Generell kann man aber sagen, dass es erst für große Anwendungsprojekte mit einer hohen Anzahl von Teammitgliedern Sinn macht, da der Arbeitsaufwand für die Einrichtung einer Anwendung basierend auf einer Micro-services-Architektur zu groß ist. Daraus ergibt sich, dass die Einführung einer Micro-services Architektur immer dann Sinnvoll ist, wenn die Weiterentwicklung und Wartung der Anwendung, aufgrund ihrer Größe, zu träge wird und damit zu viel kosten verursacht.
+Für kleine Anwendungen wird empfohlen, jeden Services in der Anwendung mit einer klar vordefinierten Schnittstelle zu entwerfen. Wenn die Anwendung schließlich eine Größe erreicht hat, an der es Sinn macht eine Micro-services-Architektur einzusetzen, kann so eine Migration besser koordiniert werden. <br />
+https://www.youtube.com/watch?v=lTAcCNbJ7KE
+<br />
+
+Microservice-Architektur kann vor allem dann sinnvoll sein, wenn eine hohe Ausfallsicherheit erforderlich ist.
+Küchenmaschinen-Beispiel:
+Kommt es in dem monolithischen All-in-one Küchengerät (aus dem obigen Beispiel) zu einem Kurzschluss, ist das gesamte Gerät außer Betrieb. Es kann weder der Teig gerührt, geknetet noch gebacken werden. Die komplette Anwendung ist so lange offline/handlungsunfähig, bis der Kurzschluss repariert und die Maschine einsatzbereit ist.
+
+Kommt es hingegen beim Microservice-Pendant zu einem Problem eines Einzelgerätes (Mixer, Knetgerät, Backofen), können die anderen Geräte weiterhin ihre Arbeit verrichten. Fällt der Backofen aus, kann der Teig weiterhin vorbereitet (gerührt und geknetet) werden. Sobald der Backofen einsatzbereit ist, können die vorbereiteten Portionen abgearbeitet werden
 
 ## Wie können Micro-services mit Docker-Compose verwaltet werden?
 Micro-services können als Docker-Container umgesetzt werden. Damit bietet Docker-Compose eine Möglichkeit, Micro-services zu koordinieren und deren konsistente Kommunikation sicherzustellen (DZone - Manage Microservices With Docker Compose).

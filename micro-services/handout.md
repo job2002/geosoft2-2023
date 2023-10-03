@@ -30,8 +30,9 @@ Micro-services werden angewendet weil sie einige Vorteile im Vergleich zur tradi
 * Datenbanken werden voneinander separiert. Fremdschlüssel-Verknüpfungen zwischen zwei Micro-services sind nicht mehr möglich. Die Aufrechterhaltung der Datenintegrität wird auf den Anwendungsbereich verschoben.
 
 ## Wie Funktionieren Micro-services? How?
+**Unterschied zwischen Monolith-Architektur und Micro-service-Architektur:** <br />
 ![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://martinfowler.com/articles/microservices/images/sketch.png) <br />
-Unterschied zwischen Monolith-Architektur und Micro-service-Architektur:
+https://martinfowler.com/articles/microservices/images/sketch.png
 
 | Monolith-Architektur | Microservice-Architektur |
 | -------- | -------- |
@@ -55,22 +56,24 @@ Würde man die All-in-one Küchenmaschine in Microservices umwandeln wollen, wü
   
 Für das Rühren, das Kneten und das Backen würden wir jeweils einen eigenen Microservice enwtickeln und bereitsstellen. Den Mixer, das Knetgerät und einen Backofen.
 Dafür könnten drei Teams gebildet werden, die je ein Microservice entwickeln. Durch die Unabhängigkeit der einzelnen Komponenten muss nicht auf den Fortschritt eines anderen Teams gewartet werden. Die drei Teams können die Entwicklung parallel starten und durchführen. <br />
+![Team](https://github.com/astru03/geosoft2-2023/assets/134288087/85d85c31-7d1d-4bfc-bb00-e4f516b0796b) <br />
+https://jax.de/blog/microservices-nach-dem-hype/
 
-![Team](https://github.com/astru03/geosoft2-2023/assets/134288087/85d85c31-7d1d-4bfc-bb00-e4f516b0796b)
-
-
-**Kommunikation**
+**Kommunikation zwischen Microservices** <br />
 Auch bei Microservices können Abhängigkeiten untereinander entstehen. Diese sollten so gering wie möglich gehalten werden, da es sonst dem Prinzip der Microservice-Architektur widerspricht.
-Für die Kommunikation zwischen den verschiedenen Microservices gibt es zwei Ansätze. Die bevorzugte “Asynchrone Kommunikation” und die “Synchrone Kommunikation”.
-Bei der Asynchronen Kommunikation werden Nachrichten geschickt, ohne auf eine direkte Antwort (Abhängigkeit) warten zu müssen. Dieses Prinzip kann mit Hilfe eines Messaging-Systems realisiert werden. An dieses System können Nachrichten/Anfragen gesendet werden (ähnlich wie eine Warteschlange), die von anderen Microservices bearbeitet werden. Dadurch ist die Kapselung und die Unabhängigkeit der Microservices untereinander so weit es geht gegeben.
-![Asynchrone Kommunikation](https://cdnp-sdxhomepage-static-prod.azureedge.net/wp-content/uploads/2016/10/micorservices-3.2.jpg)
+Für die Kommunikation zwischen den verschiedenen Microservices gibt es zwei Ansätze. Die bevorzugte “Asynchrone Kommunikation” und die “Synchrone Kommunikation” (SDX - Microservices – Kommunikation).
 
-Bei der Synchronen Kommunikation, wird auf eine direkte Antwort gewartet, wodurch Abhängigkeiten entstehen. Um diese so gering wie möglich zu halten, sollten die Aufrufe nur in einer Richtung verlaufen.
-![Synchrone Kommunikation](https://cdnp-sdxhomepage-static-prod.azureedge.net/wp-content/uploads/2016/09/microservices5-e1477492451414.jpg)
-
+**_Asynchrone Kommunikation_** <br />
+Bei der Asynchronen Kommunikation werden Nachrichten geschickt, ohne auf eine direkte Antwort (Abhängigkeit) warten zu müssen. Dieses Prinzip kann mit Hilfe eines Messaging-Systems realisiert werden. An dieses System können Nachrichten/Anfragen gesendet werden (ähnlich wie eine Warteschlange), die von anderen Microservices bearbeitet werden. Dadurch ist die Kapselung und die Unabhängigkeit der Microservices untereinander so weit es geht gegeben (SDX - Microservices – Kommunikation). <br />
+![Asynchrone Kommunikation](https://cdnp-sdxhomepage-static-prod.azureedge.net/wp-content/uploads/2016/10/micorservices-3.2.jpg) <br /><br />
 https://www.sdx-ag.de/2016/11/microservices-kommunikation/
 
-Aber was spricht für diese Vorgehensweise? Wann könnte es Sinn machen auf eine monolithische Architektur zuverzichten und sein Programm in Microservices zu unterteilen?
+**_Synchrone Kommunikation_** <br />
+Bei der Synchronen Kommunikation, wird auf eine direkte Antwort gewartet, wodurch Abhängigkeiten entstehen. Um diese so gering wie möglich zu halten, sollten die Aufrufe nur in einer Richtung verlaufen (SDX - Microservices – Kommunikation). <br />
+![Synchrone Kommunikation](https://cdnp-sdxhomepage-static-prod.azureedge.net/wp-content/uploads/2016/09/microservices5-e1477492451414.jpg) <br />
+https://www.sdx-ag.de/2016/11/microservices-kommunikation/
+
+Aber was spricht für diese Vorgehensweise? Wann könnte es Sinn machen auf eine monolithische Architektur zu verzichten und sein Programm in Microservices zu unterteilen?
 
 ## Wann macht der Einsatz von Micro-services Sinn? When?
 Es gibt keine Einheitliche Definition, ab wann der Einsatz von Micro-services Sinn macht. Generell kann man aber sagen, dass es erst für große Anwendungsprojekte mit einer hohen Anzahl von Teammitgliedern Sinn macht, da der Arbeitsaufwand für die Einrichtung einer Anwendung basierend auf einer Micro-services-Architektur zu groß ist. Daraus ergibt sich, dass die Einführung einer Micro-services Architektur immer dann Sinnvoll ist, wenn die Weiterentwicklung und Wartung der Anwendung, aufgrund ihrer Größe, zu träge wird und damit zu viel kosten verursacht.
@@ -125,8 +128,9 @@ Weitere Docker-compose.yml Befehle können unter folgenden Link nachgeschlagen w
 https://docs.docker.com/compose/compose-file/05-services/
 https://docs.docker.com/get-started/08_using_compose/
 
-Das in der Abbildung dargestellte Beispiel für die Verwaltung von Micro-services über Docker-Compose, kann über folgenden Link detailliert nachvollzogen werden.
-![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://dz2cdn3.dzone.com/storage/temp/16332748-1666720612139.png)
+Das in der Abbildung dargestellte Beispiel für die Verwaltung von Micro-services über Docker-Compose, kann über folgenden Link detailliert nachvollzogen werden. <br />
+https://dzone.com/articles/manage-microservices-with-docker-compose <br />
+![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://dz2cdn3.dzone.com/storage/temp/16332748-1666720612139.png) 
 
 
 ## Literaturverzeichnis
@@ -144,3 +148,6 @@ DZone - Manage Microservices With Docker Compose <br />
   
 Docker-docs - Use Docker Compose <br />
   https://docs.docker.com/get-started/08_using_compose/ <br /> (abgerufen am 02.10.2023)
+
+SDX - Microservices – Kommunikation <br />
+  https://www.sdx-ag.de/2016/11/microservices-kommunikation/ <br /> (abgerufen am 03.10.2023)

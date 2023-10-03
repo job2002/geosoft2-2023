@@ -1,6 +1,6 @@
 # Geosoftware II handout Micro-Services (WiSe 2023/24)
 
-[@astru03](https://github.com/astru03) & [@GolfEchoOscar](https://github.com/GolfEchoOscar)
+Autoren: [@astru03](https://github.com/astru03) & [@GolfEchoOscar](https://github.com/GolfEchoOscar)
 
 ## Was sind Micro-services?
 

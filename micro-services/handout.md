@@ -54,7 +54,8 @@ Würde man die All-in-one Küchenmaschine in Microservices umwandeln wollen, wü
 - backen
   
 Für das Rühren, das Kneten und das Backen würden wir jeweils einen eigenen Microservice enwtickeln und bereitsstellen. Den Mixer, das Knetgerät und einen Backofen.
-Dafür könnten drei Teams gebildet werden, die je ein Microservice entwickeln. Durch die Unabhängigkeit der einzelnen Komponenten muss nicht auf den Fortschritt eines anderen Teams gewartet werden. Die drei Teams können die Entwicklung parallel starten und durchführen.
+Dafür könnten drei Teams gebildet werden, die je ein Microservice entwickeln. Durch die Unabhängigkeit der einzelnen Komponenten muss nicht auf den Fortschritt eines anderen Teams gewartet werden. Die drei Teams können die Entwicklung parallel starten und durchführen. <br />
+
 ![Team](https://github.com/astru03/geosoft2-2023/assets/134288087/85d85c31-7d1d-4bfc-bb00-e4f516b0796b)
 
 

@@ -31,7 +31,7 @@ Micro-services werden angewendet weil sie einige Vorteile im Vergleich zur tradi
 
 ## Wie Funktionieren Micro-services? How?
 **Unterschied zwischen Monolith-Architektur und Micro-service-Architektur:** <br />
-![Unterschied zwischen Monolith-Architektur und Micro-service-Architektur.](https://martinfowler.com/articles/microservices/images/sketch.png) <br />
+ ![sketch](https://github.com/astru03/geosoft2-2023/assets/134288087/65847f6f-846d-4e5a-a1f5-f347660e0bea) <br />
 https://martinfowler.com/articles/microservices/images/sketch.png
 
 | Monolith-Architektur | Microservice-Architektur |

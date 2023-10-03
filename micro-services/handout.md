@@ -51,10 +51,10 @@ Micro-services können als Docker-Container umgesetzt werden. Damit bietet Docke
 Damit die Verwaltung der Micro-services über Docker Compose geschehe kann, muss zunächst für jeden Services ein Dockerfile erstellt werden. In diesen werden alle benötigten Befehle eingerichtet um aus dem Service ein Image zu erstellen. Aus dem Image kann dann ein Container gebaut werden, welches ein Softwarepaket darstellt, das alles enthält, was zum Ausführen eines Services als Anwendung erforderlich ist.
 
 **Aufbau eines Dockerfile** <br />
-FROM -> Spezifiziert das Basis-Image.
-LABLE -> Liefert Metadaten. Wer stellt das File bereit?
-COPY -> Kopiert Dateien und Verzeichnisse in den Container.
-ENTRYPOINT -> Stellt Befehle und Argumente für einen ausführenden Container bereit.
+FROM -> Spezifiziert das Basis-Image. <br />
+LABLE -> Liefert Metadaten. Wer stellt das File bereit? <br />
+COPY -> Kopiert Dateien und Verzeichnisse in den Container. <br />
+ENTRYPOINT -> Stellt Befehle und Argumente für einen ausführenden Container bereit. <br />
 
 Weitere Dockerfile-Befehle können unter folgenden Link nachgeschlagen werden: <br />
 https://dzone.com/articles/understanding-dockerfile

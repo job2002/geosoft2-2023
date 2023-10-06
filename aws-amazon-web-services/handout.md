@@ -127,7 +127,7 @@ AWS bietet mehr als 200 verschiedene Dienste in den unterschiedlichsten Branchen
 
 ### Nachteile
 
-- Sicherheitsbedenken aufrgund von Cloud-Speicherung
+- Sicherheitsbedenken aufgrund von Cloud-Speicherung
 - Abhängigkeiten an den Diensten
 - Kosten können aus dem Ruder laufen
 - Unübersichtlichkeit, das sehr große Angebot kann überfordernd sein

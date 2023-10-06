@@ -3,14 +3,14 @@
 ## Was ist AWS?
 
 ![aws Logo](https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png)
-Amazon Web Services (aws) ist eine nach eigenen Angaben führende Cloud-Computing-Plattform und stellt IT-Ressourcen für Unternehmen und Entwickler bereit. Statt eigene Server zu betreiben, können Unternehmen die IT-Infrastrukturen und Dienste der Tochterfirma von Amazon nutzen. Dies umfasst sowohl Infrastrukturlösungen wie Compute-Ressourcen, Speicher und Datenbanken als auch Lösungen zu aktuellen Trends wie Machine Learning, Künstliche Intelligenz oder Internet of Things.
+Amazon Web Services (AWS) ist eine nach eigenen Angaben führende Cloud-Computing-Plattform und stellt IT-Ressourcen für Unternehmen und Entwickler bereit. Statt eigene Server zu betreiben, können Unternehmen die IT-Infrastrukturen und Dienste der Tochterfirma von Amazon nutzen. Dies umfasst sowohl Infrastrukturlösungen wie Compute-Ressourcen, Speicher und Datenbanken als auch Lösungen zu aktuellen Trends wie Machine Learning, Künstliche Intelligenz oder Internet of Things.
 
 ## Historie
 
-AWS wurde 2006 als Tochterunternehmen vom Online-Versandhändler Amazon.com gegründet um Entwicklern eine IT-Infrastruktur anbieten zu können. Der Fokus lag von Beginn an auf den Unternehmen. Amazon selbst benötigte für seine Plattform Server, die auch Dritten angeboten werden sollten. Der erste Server für aws-Dienste wurde in Südafrika entwickelt.
-Seit 2010 gibt es ein kostenloses Angebot für aws als Reaktion auf konkurrierende Projekte.
+AWS wurde 2006 als Tochterunternehmen vom Online-Versandhändler Amazon.com gegründet um Entwicklern eine IT-Infrastruktur anbieten zu können. Der Fokus lag von Beginn an auf den Unternehmen statt auf den Endverbrauchern. Amazon selbst wollte für die eigene Plattform wiederverwendbare Module herstellen, die auch Dritten angeboten werden sollten. Der erste Server für aws-Dienste wurde in Südafrika entwickelt.
+Seit 2010 gibt es ein kostenloses Angebot für AWS als Reaktion auf konkurrierende Projekte. Mittlerweile gibt es Konkurrenzunternehmen wie Microsoft Azure und Google Cloud.
 Im Oktober 2021 erhielt aws einen Großauftrag des britischen Geheimdienst um ein Cloud-System für geheime Daten in Großbritannien aufzubauen.
-Die aws Server sind überall auf der Welt verteilt und die Dienste sowie die Produktpalette entwickeln sich stetig weiter.
+Die aws Server sind überall auf der Welt verteilt und die Dienste sowie die Produktpalette entwickeln sich stetig weiter. 
 
 ## Branchen
 
@@ -25,7 +25,7 @@ Die aws Server sind überall auf der Welt verteilt und die Dienste sowie die Pro
 - Industrie
 - Produktion
 - Medien und Unterhaltung
-- gemeinnützig
+- Gemeinnützigkeit
 - Strom- und Energieversorgung
 - Einzelhandel
 - Halbleiter
@@ -109,28 +109,29 @@ AWS bietet mehr als 200 verschiedene Dienste in den unterschiedlichsten Branchen
   - **Anwendung:** Man erstellt eine sogenannte Instanz, bei der man eine geeignete [Instanzart](https://aws.amazon.com/de/ec2/instance-types/) auswählen muss. Daraufhin kann man eigene Firewall Regeln und die Art der Speicherung festlegen. Nach dem Deployment kann man sich über E2 Instance Connect mit der Instanz verbinden. Es gibt einige Instance-Typen die bei Befolgen einiger Regelen gratis nutzbar sind.
   - **Geo-Kontext:** Man kann auf EC2 Server [GIS-Server](https://enterprise.arcgis.com/de/server/10.4/cloud/amazon/launch-ec2-instance-running-arcgis-server.htm), R(Studio), etc. aufsetzen, was sogar ArcGIS unterstützt wird, da diese mit AWS an mehreren stellen zusammenarbeiten.
 
-## Wer kann aws nutzen?
+## Wer kann AWS nutzen?
 
-- kostenloses Kontingent verfügbar für maximal 12 Monate und 750 Stunden Rechenleistung (Studenten, kleine Unternehmen)...
-- Unternehmen, die Nutzung wird nach Leistung abgerechnet die in Preislisten einsehbar sind
+- Jede dritte Webseite nutzt AWS. Über eine Million Nutzer*innen hat die Plattform. Bekannte AWS-Kunden sind Netlfix, Twitch, Reddit.
+- insbesondere kleine Unternehmen, die Nutzung wird nach Leistung abgerechnet die in Preislisten einsehbar sind
+- Kostenloses Kontingent verfügbar, entweder Testversionen oder für maximal 12 Monate (und 750 Stunden Rechenleistung oder Speichereinschränkung) oder ganz kostenlos, je nach angebotenem Produkt. Richtet sich an Studenten, Unternehmer, Kleinunternehmer und Fortune-500-Unternehmen.
 
 ## Vor- und Nachteile
 
 ### Vorteile
 
 - Kunden zahlen nur Verbrauch
-- keine eigenen Server nötig, Wartung und Updates entfallen
-- schnelle Lösungen für Probleme verfügbar
+- Keine eigenen Server nötig, Wartung und Updates entfallen
+- Schnelle Lösungen für Probleme verfügbar
 - Flexibilität, es können jederzeit Dienste hinzugebucht werden
-- große Auswahl an Diensten für verschiedenste Branchen
+- Große Auswahl an Diensten für verschiedenste Branchen
 
 ### Nachteile
 
-- Sicherheitsbedenken
-- Abhängigkeiten
+- Sicherheitsbedenken aufrgund von Cloud-Speicherung
+- Abhängigkeiten an den Diensten
 - Kosten können aus dem Ruder laufen
 - Unübersichtlichkeit, das sehr große Angebot kann überfordernd sein
-- wenig Beratung für kleine Unternehmen
+- Wenig Beratung für kleine Unternehmen
 
 ### Quellen
 
@@ -140,3 +141,5 @@ AWS bietet mehr als 200 verschiedene Dienste in den unterschiedlichsten Branchen
 - [medium](https://aws.plainenglish.io/all-about-amazon-location-service-725239540dba)
 - [plusserver](https://www.plusserver.com/blog/was-ist-aws-cloud/)
 - [seo-kueche](https://www.seo-kueche.de/lexikon/amazon-web-service/#:~:text=Amazon%20Web%20Services%2C%20auch%20als,Aufgaben%20mieten%20und%20vieles%20mehr.)
+- [Historie](https://datascientest.com/de/amazon-web-services)
+- [Sicherheitsbedenken](https://www.computerbild.de/artikel/cb-Aktuell-Internet-Sicherheitslecks-Amazon-Web-Services-Ruhr-Universitaet-Bochum-6560372.html)

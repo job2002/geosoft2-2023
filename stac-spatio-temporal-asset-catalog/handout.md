@@ -175,6 +175,11 @@ diese implementieren widerrum unterschiedliche OGC API Standards. Für nähere I
 - sie liefert eine Suchfunktion, welche sich durch viele Communityfunktionen stark erweitern lässt
 - sie gibt die Daten nach außen frei, um diese maschinell abzufragen
 
+#### Konformitätsprüfung eines STAC
+Da jede Person seinen eigenen STAC implementieren und veröffentlichen kann, stellt sich die Frage wie sichergestellt wird, dass ein solcher STAC auch der Spezifikation entspricht.
+- da der STAC eine Spezifikation einer Communtity ist, die kein formelles Kontrollgremium besitzt, existiert keine Kontrolle der Konformität zur Spezifikation 
+- es gibt aber [Validatoren](https://github.com/stac-utils/stac-validator), die helfen grobe Fehler bei der Implementierung eines STAC zu erkennen und zu beseitigen
+
 
 #### Minimalbeispiel
 Einige der öffentlich angebotenen STAC Datensätze findest du [hier](https://stacspec.org/en/about/datasets/) (z.B. Sentinel & Landsat Daten). Ansonsten folgt nun ein kleines Beispiel unserer eigenen STAC Implementierung:

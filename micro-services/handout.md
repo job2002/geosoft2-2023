@@ -69,7 +69,7 @@ Bei der Asynchronen Kommunikation werden Nachrichten geschickt, ohne auf eine di
 
 **_Synchrone Kommunikation_** <br />
 Bei der Synchronen Kommunikation, wird auf eine direkte Antwort gewartet, wodurch Abhängigkeiten entstehen. Um diese so gering wie möglich zu halten, sollten die Aufrufe nur in einer Richtung verlaufen (SDX - Microservices – Kommunikation). <br />
-![Synchrone_Kommunikation](https://github.com/astru03/geosoft2-2023/assets/134288087/38b7c41d-5262-4b70-af84-714a5ce93305) <br />
+![Synchrone_Kommunikation](https://github.com/astru03/geosoft2-2023/assets/134288087/4d679642-cca1-4ada-8772-22f8a9f8bb2c) <br />
 
 
 Aber was spricht für diese Vorgehensweise? Wann könnte es Sinn machen auf eine monolithische Architektur zu verzichten und sein Programm in Microservices zu unterteilen?

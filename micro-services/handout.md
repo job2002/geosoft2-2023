@@ -65,7 +65,7 @@ Für die Kommunikation zwischen den verschiedenen Microservices gibt es zwei Ans
 
 **_Asynchrone Kommunikation_** <br />
 Bei der Asynchronen Kommunikation werden Nachrichten geschickt, ohne auf eine direkte Antwort (Abhängigkeit) warten zu müssen. Dieses Prinzip kann mit Hilfe eines Messaging-Systems realisiert werden. An dieses System können Nachrichten/Anfragen gesendet werden (ähnlich wie eine Warteschlange), die von anderen Microservices bearbeitet werden. Dadurch ist die Kapselung und die Unabhängigkeit der Microservices untereinander so weit es geht gegeben (SDX - Microservices – Kommunikation). <br />
-![Adobe_Express_20231008_1043000_1](https://github.com/astru03/geosoft2-2023/assets/82390297/e10e57f4-bbff-488d-89b3-0c02cdca7331)
+![Asynchrone_Kommunikation](https://github.com/astru03/geosoft2-2023/assets/134288087/7de96ea7-aaf0-49ec-8aa6-310a42e122e0)
  <br /><br />
 
 **_Synchrone Kommunikation_** <br />

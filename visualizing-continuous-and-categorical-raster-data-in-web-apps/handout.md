@@ -54,10 +54,45 @@ Options:
 Beispiel:
 ![Sample](https://stuartmatthews.github.io/leaflet-geotiff/example.png)
 
+## Python-Libraries (Beispiel Rasterio)
+
+Rasterio ist eine mächtige Python-Bibliothek um Geodaten zu bearbeiten. Sie funktioniert exzellent im Zusammenspiel mit anderen Bibliotheken und bietet eine große Spanne an **Rasteroperationen** wie z.B.:
+* Zuschneiden
+* Reprojizieren
+* Resampling
+
+So kann rasterio beispielsweise für Aufgaben wie das Lesen und Schreiben von Satellitenbildern, die Durchführung von Geländeanalysen, die Extraktion von Daten aus digitalen Höhenmodellen und die Durchführung von Fernerkundungsanalysen verwendet werden.
+
+### Plotten mit Rasterio
+
+```python
+!pip install rasterio #Installiert rasterio, falls noch nicht passiert
+````
+
+```python
+import rasterio
+from rasterio.plot import show
+```
+
+```python
+# Pfad zur GeoTIFF-Datei
+file_path = 'path_to_your_geotiff_file.tif'
+
+# Öffnet GeoTIFF mithilfe von Rasterio
+with rasterio.open(file_path) as src:
+    # Visualisierung des GeoTIFF mithilfe der Show-Funktion
+    show(src, title='GeoTIFF Visualization', cmap='viridis')
+```
+
+
+
+
 ### Dokumentation
 [Reading and Visualizing GeoTiff | Satellite Images with Python](https://towardsdatascience.com/reading-and-visualizing-geotiff-images-with-python-8dcca7a74510)
 <br>
 [Geotiff in Leaflet](https://github.com/stuartmatthews/leaflet-geotiff)
 <br>
 [Visualizing Raster Data](https://eox.at/2016/02/visualizing-raster-data/)
+<br>
+[5 Python Packages For Geospatial Data Analysis](https://www.kdnuggets.com/2023/08/5-python-packages-geospatial-data-analysis.html)
 

@@ -6,5 +6,5 @@ Diese Bibliotheken funktionieren perfekt mit gängigen Bildformaten wie .png, .t
 
 
 ### Dokumentation
-[Reading and Visualizing GeoTiff | Satellite Images with Python] (https://towardsdatascience.com/reading-and-visualizing-geotiff-images-with-python-8dcca7a74510)
+[Reading and Visualizing GeoTiff | Satellite Images with Python](https://towardsdatascience.com/reading-and-visualizing-geotiff-images-with-python-8dcca7a74510)
 

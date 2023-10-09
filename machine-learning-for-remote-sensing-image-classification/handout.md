@@ -1,5 +1,8 @@
 # Machine learning for remote sensing image classification
 
+@Philipdy
+@Jova10
+
 ## Einführung
 
 ### Was versteht man unter Image Classification?

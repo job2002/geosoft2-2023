@@ -1,6 +1,7 @@
 # OpenEO - Open Earth Observation 
-![Alt-Text](openeo_logo.png)
+![OpenEO](images/openeo.png)
 
+authors: @wittrockscode, @martinkrg26
 ## Was ist OpenEO?  
 
 **OpenIO** ist eine Initiative zur Vereinfachung des Zugangs und der Verarbeitung von Erdbeobachtungsdaten
@@ -20,12 +21,16 @@
 
 OpenEO entwickelt eine ***API***, mit der Clients (R, Python, JavaScript) Erdbeobachtungsdaten im Backend auf eine simple und einheitliche Art und Weise verbinden können.
 
-Bild von ohne API und Bild mit API
+### Funktionalität ohne API
+![OpenEO](images/withoutOpenEOAPI.jpg)
+
+### Mit API von OpenEO
+![OpenEO](images/withOpenEOAPI.jpg)
 
 ### API
 * zum Erforschen (API, EO Data, Prozesse)
 * Authentifizierung (OpenID Connect)
-* Nutzen Prozesse
+* Nutzt Prozesse (Funktionen)
 	* [vordefinierte Prozesse](https://openeo.org/documentation/1.0/processes.html)
 	* vom Nutzer selbst definierte Prozesse
 	* vom Nutzer selbst definierte Funktionen in R, Python oder JavaScript
@@ -67,12 +72,24 @@ Bild von ohne API und Bild mit API
 
 ## Andere Komponenten
 
-![Alt-Text](openeoplatform.jpg)
+![OpenEOPlatform](images/openeoplatform.jpg)
 
-### OpenEO Platform
+### Was ist [OpenEO Platform](https://openeo.cloud/)
+	
+OpenEO Platform ist eine Implementierung der OpenEO-Spezifikationen. Diese Platform setzt die Prinzipien von OpenEO in die Praxis um und ist sozusagen das am naheligenste Back-end für EO-Daten
+
 * Cloud Provider
+* gefördert von der ESA
+* Verfügbarkeit von Erdbeobachtungsdaten
+* technische Umsetzung der OpenEO-Richtlinien
 
 ### OpenEO Hub
+
+* OpenEO Community
+
+### Implementierung und Nutzen am Beispiel von R
+
+... 
 
 ## Ressourcen und Quellen
 

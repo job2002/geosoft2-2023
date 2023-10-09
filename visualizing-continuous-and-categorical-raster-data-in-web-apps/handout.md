@@ -56,6 +56,8 @@ Beispiel:
 
 ### Dokumentation
 [Reading and Visualizing GeoTiff | Satellite Images with Python](https://towardsdatascience.com/reading-and-visualizing-geotiff-images-with-python-8dcca7a74510)
+<br>
 [Geotiff in Leaflet](https://github.com/stuartmatthews/leaflet-geotiff)
+<br>
 [Visualizing Raster Data](https://eox.at/2016/02/visualizing-raster-data/)
 

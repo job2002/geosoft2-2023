@@ -33,3 +33,48 @@ Die Einbindung von Rasterdaten in R erfolgt über Funktionen aus dem Raster-Pake
 <br/><br/>
 
  
+## **4. Datenanalyse**
+Um sich über die vorliegenden Fernerkundungsdaten einen Überblick zu verschaffen, können die Variablennamen aufgerufen werden, mit dem die Daten eingebunden sind.
+  + Beispiel: *"nir"* eingeben, um Informationen über den zuvor eingebundenen Naheninfrarotkanal zu erhalten 
+<br/><br/>
+
+Auf diese Art und Weise erhält man folgende Informationen:
+
+* Klasse: Was für eine Art von Daten liegt vor?
+* Dimension: Wie viele Daten liegen vor?
+* Auflösung: Welche Auflösung besitzen meine Daten?
+* Ausdehnung: Welche Fläche decken meine Daten ab?
+* CRS: Welches Referenzsystem (Koordinaten, Datum, etc.) nutzen meine Daten?
+* Quelle: Woher stammen die Fernerkundungsdaten? Vom Speicher in R eingebunden oder durch R aus dem Internet runtergeladen?
+* Namen: Wie heißen die Dateien, die eingebunden sind?
+<br/><br/>
+
+Diese Informationen können bei der Ver- und Bearbeitung der Rasterdaten nützlich sein, da an den meisten Metadaten noch etwas verändert werden kann.
+
+* Die Klasse kann zum Teil verändert werden, zum Beispiel indem die Daten durch eine andere Funktion eingebunden werden.
+  * Beispiel: *"RasterStack"* und *"RasterBrick"* aus dem letzten Abschnitt.
+* Die Auflösung der Daten kann geändert werden mit Hilfe der *resample()*-Funktion aus dem Raster Paket.
+  * Beispiel: *resample_data <- (resolution_30_data, resolution_20_data)*
+  * Die Beispielvariablen würden entsprechend eine Auflösung von 30 x 30 Metern, bzw. 20 x 20 Metern pro Pixel haben und die Funktion würde die Variable *resolution_30_data* konvertieren zu einer Auflösung von 20 x 20 Metern pro Pixel und das Ergebnis im Variablennamen *resample_data* speichern
+* Die Ausdehnung der Fernerkundungsdaten kann mit der *crop()*-Funktion aus dem Raster Paket verändert werden. Dazu werden Koordinaten über die gewünschte Ausdehnung benötigt.
+    * Beispiel: *cropped_raster <- crop(data, c(Koord-1, Koord-2, Koord-3, Koord-4))*
+    * Die Koordinaten müssen dabei in folgender Reihenfolge eingefügt werden:
+      * Stelle 1 und 4: Koordinaten vom Punkt in der oberen linken Ecke
+      * Stelle 2 und 4: Koordinaten vom Punkt in der oberen rechten Ecke
+      * Stelle 1 und 3: Koordinaten vom Punkt in der unteren linken Ecke
+      * Stelle 2 und 3: Koordinaten vom Punkt in der unteren rechten Ecke
+    * Beispiel: cropped_muenster <- crop(muenster_data, c(394861, 5746419, 5767397))
+      * Genutzt werden hier Koordinaten der ungefähren Ausdehnung von Münster im UTM-Format
+* Das Referenzsystem, bzw. CRS, von Rasterdaten kann wie folgt verändert werden:
+  1. Definiere ein Ziel Referenzsystem, in dem das eigene konvertiert werden soll
+      * *ziel_crs <- "+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs"*
+      * oder *ziel_crs <- CRS("+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs"*
+  2. Projiziere die Rasterdaten mit der *projectRaster()*-Funktion aus dem Raster Paket um:
+      * proj_data <- projectRaster(proj_data, crs=ziel_crs), wobei "proj_data" die Beispielrasterdaten sind, die umprojiziert werden sollen
+        
+Darüber hinaus ist es mit *summary(data)* möglich alle wichtigen statistischen Informationen der Daten zu erhalten
+<br/><br/>
+
+## **5. Visualisierung der Fernerkundungsdaten**
+
+

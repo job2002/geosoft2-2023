@@ -76,5 +76,49 @@ Darüber hinaus ist es mit *summary(data)* möglich alle wichtigen statistischen
 <br/><br/>
 
 ## **5. Visualisierung der Fernerkundungsdaten**
+Die Visualisierung der Rasterdaten ist auf mehreren Arten möglich:
+* *plot()* ist eine Standardfunktion in R. Sie ist flexibel und kann leicht angepasst werden. Einen *RasterStack* plottet die Funktion allerdings nicht übereinander sondern nebeneinander. Somit ist es nicht möglich ein Echtfarb- oder Falschfarbkomposit auf diese Weise zu erstellen.
+  * Beispiel: *plot(data)*, wobei *"data"* Beispielrasterdaten sind
+* *mapview()* ist eine Funktion aus dem Mapview Paket. Sie legt die vorhandenen Rasterdaten (auch *RasterStack*) über eine Karte oder ein Luftbild, wie zum Beispiel von OpenStreetMaps.
+  * Beispiel: *mapview(data)*
+* *plotRGB()* ist eine Funktion aus dem Raster Paket und bietet die Möglichkeit ein Komposit aus Rasterdaten darzustellen, indem angegeben wird welcher Kanal der blaue, gründe und rote Kanal sind.
+  * Beispiel: plotRGB(echtfarb_data, b=1, g=2, r=3, stretch="lin")
+    * *stretch="lin"* bewirkt, dass die maximalen Werte der Rasterdaten gestreckt werden, was zu kontrastreicheren Bildern führen kann.
+  * Beispiel: plotRGB(falschfarb_data, b=2, g=3, r=4, stretch="lin")
+    * Hier wurde der rote Kanal mit dem Naheninfrarotkanal ausgetauscht, um ein Falschfarbkomposit zu erstellen.
+* Eine Legende lässt sich mit dem Befehl *legend()* erstellen und konfigurieren.
+  * Beispiel: Zuerst: *plostRGB(...)* und dann *legend("topleft", legend=c("Echtfarbkomposit von Münster"))*
+<br/><br/>
 
+## **6. Datenverarbeitung und Transformation**
+Um mit den Rasterdaten zu arbeiten, kann man, je nachdem welches Ziel verfolgt wird und wie die Daten am Ende aussehen sollen, auf verschiedenen Arten vorgehen.
+* Ein einfaches Beispiel ist die Multiplikation aller Werte eines bestimmten Kanals:
+  * Beispiel: nir_2 <- nir * 2, wobei *"nir"* in diesem Beispiel der Naheinfrarotkanal ist, der zuvor bereits eingebunden wurde.
+* Es ist auch möglich die Werte zweier Kanäle mit einander in einem Verhältnis zu setzen, indem zum Beispiel der NWDI (bzw. Wasserindex) oder der NDVI (bzw. Vegetationsindex) berechnet wird. Der NDVI wird zum Beispiel folgendermaßen berechnet: *((NIR - RED) / (NIR * RED))*.
+  * Beispiel: data$NDVI <- ((nir - red)/(nir + red))
+    * Wobei *"$"* bewirkt, dass die erstellte Variable *"NDVI"* an die bereits existierende Beispielvariable *"data"* angehängt wird und auch darüber abrufbar ist
+* Der NDVI kann im Weiteren für die Eingrenzung bestimmter Landnutzungsklassen verwendet werden. Zum Beispiel haben Gewässer einen NDVI-Wert von 0 oder weniger. Indem wir alle anderen Werte ausschließen, können wir alle Gewässer in unserem Untersuchungsgebiet identifizieren.
+  * Beispiel: *data$gewaesser <- NDVI <= 0*
+* Glätten oder Filtern von Rasterdaten kann mit der *focal()*-Funktion aus dem Raster Paket erfolgen. Dabei wendet die Anwendung eine vom Nutzer bestimmte mathematische Funktion auf eine ausgewählte Nachbarschaft von jedem Punkt an.
+  * Beispiel: Wir berechnen in einem Umkreis einer 3 x 3 Matrix um jeden Punkt herum jeweils den Median aller Werte und ersetzen den Punkt mit diesem Wert. Das führt dazu, dass das Bild duetlich geglättet wird, indem statistische Ausreißer entfernt werden.
+  * Die Funktion nimmt folgende drei Parameter entgegen:
+    * *x*: Die Eingangsrasterdaten, auf die die Operation angewendet werden soll.
+    * *w*: Die definierte räumliche Nachbarschaft, also wie groß der Umkreis sein soll, in dem die Funktion angewendet werden soll. Größere Umkreise führen oft zu Verlust von Informationen und zu "glatteren" Ergebnissen.
+    * *fun*: Die Funktion, die auf die ausgewählte Nachbarschaft angewendet werden soll, wie zum Beispiel die Bestimmung des Medians oder der Standardabweichung.
+  * Beispiel: *NDVI_glatt <- focal(NDVI, fun = median, w = matrix(1, nrow = 3, ncol = 3))*
+<br/><br/>
 
+## **7. Speichern**
+Um die Ergebnisse als PDF oder JPG zu speichern, gibt es in RStudio Knöpfe für den Export. Rasterdaten und andere kompliziertere Dateiformate müssen meistens per Befehl im Skript, bzw. Konsole, gespeichert werden.
+* Das Speichern einer PDF-Datei wird eingeleitet durch den Befehl *pdf()*, der standardmäßig in R verfügbar ist. Auf dem Befehl folgt *was* gespeichert werden soll, also zum Beispiel die Anweisung *plott(data)*. Daraufhin kann das Speichern mit einem extra Befehl *dev.off()* beendet werden.
+  1. *pdf("NDVI.pdf")*
+  2. *plot(NDVI)*
+  3. *legend("topleft", legend=c("Echtfarbkomposit von Münster"))*
+  4. *dev.off()*
+* Das Speichern der Rasterdaten im Environment ist möglich durch die Funktion *writeRaster()*, die das zu speichernde Raster, den Speicherort, den Speichernamen und das Dateiformat erwartet.
+  * Beispiel: *writeRaster(raster_daten, "ordner_name/raster_daten.grd")*
+ 
+## **8. Quellen**
+* Vorlesungsfolien: Meyer, Hannah: Fernerkundung und maschinelle Lernverfahren zur flächendeckenden Erfassung von Umweltvariablen. Teil 2: Fernerkundungsdaten in R.
+* [rspatial.org](https://rspatial.org/raster/rs/index.html)
+* [YouTube.com](https://www.youtube.com/watch?v=_nCUUBKKHsg)

@@ -42,32 +42,16 @@ Wenn eine Funktion auf einen gesamten Datenwürfel angewendet wird, verschwinden
 - __Komplexität der Implementierung__: Die Erstellung und Verwaltung von Data Cubes erfordert spezifisches Know-how und geeignete Softwaretools.
 - __Datenaktualisierung__: Das Hinzufügen neuer Daten oder die Aktualisierung bestehender Daten in einem Data Cube kann komplex sein und erfordert besondere Aufmerksamkeit.
 
-### Anwendungen
 
-Zeitliche Analyse:
-
-- Überwachung von Veränderungen im Laufe der Zeit: Datacubes ermöglichen die Analyse von Veränderungen der Erdoberfläche im Laufe der Zeit, z. B. Veränderungen der Bodenbedeckung, Entwaldung, Verstädterung und saisonale Schwankungen.
-
-Umweltüberwachung:
-
-- Studien zum Klimawandel: Datacubes werden zur Untersuchung des Klimawandels verwendet, indem langfristige Trends bei Temperatur, Niederschlag und anderen Klimavariablen analysiert werden.
-
-Überwachung von Naturkatastrophen: 
-- Überwachung und Analyse von Daten vor, während und nach Naturkatastrophen, wie z. B. Wirbelstürmen, Erdbeben und Waldbränden, um die Auswirkungen zu bewerten und Reaktionsmaßnahmen zu planen.
-
-Fernerkundungsdaten: 
-- Integration verschiedener Fernerkundungsdatenquellen in einen einheitlichen datacube für umfassende Analysen.
-
-
-### Beispiele
-- Open Data Cube (ODC) ist ein Open-Source-Projekt zur Verwaltung und Analyse von Geodaten, das hilft die Leistungsfähigkeit von Satellitendaten zu nutzen. Im Kern besteht der ODC aus einer Reihe von Python-Bibliotheken und einer PostgreSQL-Datenbank
-- Google Earth Engine verwendet datacubes, um eine skalierbare und interaktive Plattform für die Analyse von EO Daten bereitzustellen. Google Earth Engine ermöglicht den Zugriff auf und die Analyse von großen Geodatensätzen für Anwendungen wie Umweltüberwachung, Landbedeckungskartierung und Studien zum Klimawandel.
-- Euro Data Cube wurde geschaffen, um die technischen Hürden zu senken, die bei der Gewinnung von Informationen aus Earth ovservation und deren Aufbereitung für die Analyse bestehen. Sie kombiniert EO-Daten aus verschiedenen Quellen an einem Ort, darunter Daten von den Sentinel-Satelliten, Daten von anderen kommerziellen Satellitenmissionen mit sehr hoher Auflösung sowie Produkte und Daten von Copernicus-Diensten und anderen EO-Initiativen.
-- EODataBee integriert Sentinel-Daten, Daten des Copernicus-Dienstes und vom Nutzer gelieferte Daten in einem DataCube-System und generiert so hochwertige Informationen für die Industrie auf dem Küsten- und Binnenwassermarkt.
+## Beispiele
+- __Open Data Cube (ODC)__ ist ein Open-Source-Projekt zur Verwaltung und Analyse von Geodaten, das hilft die Leistungsfähigkeit von Satellitendaten zu nutzen. Im Kern besteht der ODC aus einer Reihe von Python-Bibliotheken und einer PostgreSQL-Datenbank
+- __Google Earth Engine__ verwendet datacubes, um eine skalierbare und interaktive Plattform für die Analyse von EO Daten bereitzustellen. Google Earth Engine ermöglicht den Zugriff auf und die Analyse von großen Geodatensätzen für Anwendungen wie Umweltüberwachung, Landbedeckungskartierung und Studien zum Klimawandel.
+- __Euro Data Cube__ wurde geschaffen, um die technischen Hürden zu senken, die bei der Gewinnung von Informationen aus Earth ovservation und deren Aufbereitung für die Analyse bestehen. Sie kombiniert EO-Daten aus verschiedenen Quellen an einem Ort, darunter Daten von den Sentinel-Satelliten, Daten von anderen kommerziellen Satellitenmissionen mit sehr hoher Auflösung sowie Produkte und Daten von Copernicus-Diensten und anderen EO-Initiativen.
+- __EODataBee__ integriert Sentinel-Daten, Daten des Copernicus-Dienstes und vom Nutzer gelieferte Daten in einem DataCube-System und generiert so hochwertige Informationen für die Industrie auf dem Küsten- und Binnenwassermarkt.
 
 
 ## Datacubes in openEO 
-Daten werden in openEO als datacubes representiert. 
+Daten werden in openEO immer als datacubes representiert. 
 Die folgenden Eigenschaften sind in der Regel für Dimensionen verfügbar:
 
     name
@@ -82,12 +66,10 @@ Die folgenden Eigenschaften sind in der Regel für Dimensionen verfügbar:
 
 
 ### Beispiel 
-In diesem Beispiel soll ein monatliches RGB-Komposit aus Sentinel-1-Rückstreudaten über dem Gebiet von Wien, Österreich, für drei Monate im Jahr 2017 erstell werden. Dies kann für die Klassifizierung und die Überwachung von Pflanzen genutzt werden.
+In diesem Beispiel soll ein monatliches RGB-Komposit aus Sentinel-1-Rückstreudaten über dem Gebiet von Wien, Österreich, für drei Monate im Jahr 2017 erstellt werden. Dies kann für die Klassifizierung und die Überwachung von Pflanzen genutzt werden.
 Es wird ein JavaScript-Client in einer Node.js-Umgebung und das Google Earth Engine-Backend genutzt. Quelle: https://openeo.org/documentation/1.0/javascript/
 
 
-https://openeo.org/assets/img/getting-started-result-example.7820ee84.jpg
- 
 ```javascript
 // Make the client available to the Node.js script
 // Also include the Formula library for simple math expressions
@@ -153,10 +135,13 @@ example().catch(error => console.error(error));
 
 ```
 
+ ![getting-started-result-example 7820ee84](https://github.com/sonja-becker/geosoft2-2023/assets/102386695/22684765-b65a-438a-94b2-b74cc116ba73)
 
 
 
 ## Literaturverzeichnis
 - Kopp, S., Becker, P., Doshi, A., Wright, D. J., Zhang, K., & Xu, H. (2019): Achieving the full vision of earth observation data cubes. Data, 4(3), 94.
+- OpenEO: https://openeo.org/documentation/1.0/javascript/ (abgerufen am 5.10.2023)
+- OpenEO: https://openeo.org/documentation/1.0/datacubes.html#what-are-datacubes (abgerufen am 5.10.2023)
 - Pebesma, E., & Bivand, R. (2023): Spatial data science: With applications in R. CRC Press.
 - Smith, J. (2017): Spatial Data Analysis with Data Cubes: Implementation in R. CRC Press.

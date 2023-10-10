@@ -1,4 +1,5 @@
 # Datenwürfel für Erdbeobachtungsdaten
+Erstellt von [@sonja-becker](https://github.com/sonja-becker) und [@SimonPepe](https://github.com/SimonPepe)
 
 ## Definition und Aufbau
 

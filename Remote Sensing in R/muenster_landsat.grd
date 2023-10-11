@@ -1,0 +1,26 @@
+[general]
+creator=R package 'raster'
+created=2023-10-11 09:54:41
+[data]
+datatype=FLT4S
+byteorder=little
+nbands=5
+bandorder=BIL
+minvalue=6128:6749:5575:5665:-0.25420484626349
+maxvalue=65535:65535:65535:65535:0.581053952321204
+nodatavalue=-3.4e+38
+[legend]
+legendtype=
+values=
+color=
+[description]
+layername=LC09_L1TP_197024_20230911_20230911_02_T1_B2:LC09_L1TP_197024_20230911_20230911_02_T1_B3:LC09_L1TP_197024_20230911_20230911_02_T1_B4:LC09_L1TP_197024_20230911_20230911_02_T1_B5:NDVI
+[georeference]
+nrows=699
+ncols=842
+xmin=394875
+ymin=5746425
+xmax=420135
+ymax=5767395
+projection=+proj=utm +zone=32 +datum=WGS84 +units=m +no_defs
+wkt=PROJCRS["unknown",    BASEGEOGCRS["unknown",        DATUM["World Geodetic System 1984",            ELLIPSOID["WGS 84",6378137,298.257223563,                LENGTHUNIT["metre",1]],            ID["EPSG",6326]],        PRIMEM["Greenwich",0,            ANGLEUNIT["degree",0.0174532925199433],            ID["EPSG",8901]]],    CONVERSION["UTM zone 32N",        METHOD["Transverse Mercator",            ID["EPSG",9807]],        PARAMETER["Latitude of natural origin",0,            ANGLEUNIT["degree",0.0174532925199433],            ID["EPSG",8801]],        PARAMETER["Longitude of natural origin",9,            ANGLEUNIT["degree",0.0174532925199433],            ID["EPSG",8802]],        PARAMETER["Scale factor at natural origin",0.9996,            SCALEUNIT["unity",1],            ID["EPSG",8805]],        PARAMETER["False easting",500000,            LENGTHUNIT["metre",1],            ID["EPSG",8806]],        PARAMETER["False northing",0,            LENGTHUNIT["metre",1],            ID["EPSG",8807]],        ID["EPSG",16032]],    CS[Cartesian,2],        AXIS["(E)",east,            ORDER[1],            LENGTHUNIT["metre",1,                ID["EPSG",9001]]],        AXIS["(N)",north,            ORDER[2],            LENGTHUNIT["metre",1,                ID["EPSG",9001]]]]

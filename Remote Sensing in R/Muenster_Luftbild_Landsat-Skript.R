@@ -38,8 +38,6 @@ library(mapview) # -> vorher install.packages("mapview")
 nir <- raster("LC09_L1TP_197024_20230911_20230911_02_T1_B5.TIF") # Einbinden des NIR-Bandes
 nir # Informationen über das Band
 plot(nir) # Erstes Plotten des Bandes
-pan <- raster("LC09_L1TP_197024_20230911_20230911_02_T1_B8.TIF") # Einbinden des Panchromatischen Bandes
-plot(pan)
 
 # Blauen, Grünen und Roten Kanal einbinden und zusammenfügen
 # Bänder: 2 = Blue, 3 = Green, 4 = Red, 5 = NIR, ...
@@ -126,8 +124,8 @@ plot(smooth_ndvi)
 # Schritt 1: "pdf" aufrufen um das Speichern der PDF einzuleiten
 pdf("NDVI_muenster.pdf")
 # Schritt 2: Den Plott erstellen
-NDVI <- (muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B5 - muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B4)/(muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B5 + muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B4)
-plot(NDVI)
+muenster_landsat$NDVI <- (muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B5 - muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B4)/(muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B5 + muenster_landsat$LC09_L1TP_197024_20230911_20230911_02_T1_B4)
+plot(muenster_landsat$NDVI)
 legend("topleft",legend=c("NDVI von Münster am 11.09.2023"))
 # Schritt 3: dev.off() um das Speichern des Plotts in der PDF zu beenden
 dev.off()

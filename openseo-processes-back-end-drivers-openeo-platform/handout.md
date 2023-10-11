@@ -1,7 +1,7 @@
 # OpenEO - Open Earth Observation 
 ![OpenEO](images/openeo.png)
 
-authors: @wittrockscode, @martinkrg26
+authors: [@wittrockscode](https://github.com/wittrockscode), [@martinkrg26](https://github.com/martinkrg26)
 ## Was ist OpenEO?  
 
 **OpenEO** ist eine Initiative zur Vereinfachung des Zugangs und der Verarbeitung von Erdbeobachtungsdaten

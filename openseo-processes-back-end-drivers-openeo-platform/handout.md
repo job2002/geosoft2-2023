@@ -4,7 +4,7 @@
 authors: @wittrockscode, @martinkrg26
 ## Was ist OpenEO?  
 
-**OpenIO** ist eine Initiative zur Vereinfachung des Zugangs und der Verarbeitung von Erdbeobachtungsdaten
+**OpenEO** ist eine Initiative zur Vereinfachung des Zugangs und der Verarbeitung von Erdbeobachtungsdaten
 
 ### Es gibt zwei grundlegende Probleme:
 
@@ -15,7 +15,7 @@ authors: @wittrockscode, @martinkrg26
 
 1. Speichern von Daten in der Cloud
 1. Im Backend berechnen und verarbeiten
-1. die Ergebnisse abrufen oder entstandene Analysen downloaden.
+1. Die Ergebnisse abrufen oder entstandene Analysen downloaden.
 
 ## Wie macht OpenEO das?
 
@@ -57,7 +57,7 @@ OpenEO entwickelt eine ***API***, mit der Clients (R, Python, JavaScript) Erdbeo
 *  [QGIS](https://openeo.org/documentation/1.0/qgis/)
 * Browser (Web-Editor without programming) 
 
-## Back-ends
+## Backends
 * GeoPySpark (Geotrellis)
 * **Google Earth Engine**
 * GRASS GIS
@@ -66,7 +66,7 @@ OpenEO entwickelt eine ***API***, mit der Clients (R, Python, JavaScript) Erdbeo
 * Apache Airflow / eoDataReaders
 * **Sentinel Hub**
 * WCPS (rasdaman)
-* R back-end
+* R backend
 * **OpenEO Platform**
 
 
@@ -76,7 +76,7 @@ OpenEO entwickelt eine ***API***, mit der Clients (R, Python, JavaScript) Erdbeo
 
 ### Was ist [OpenEO Platform](https://openeo.cloud/)
 	
-OpenEO Platform ist eine Implementierung der OpenEO-Spezifikationen. Diese Platform setzt die Prinzipien von OpenEO in die Praxis um und ist sozusagen das am naheligenste Back-end für EO-Daten
+OpenEO Platform ist eine Implementierung der OpenEO-Spezifikationen. Diese Platform setzt die Prinzipien von OpenEO in die Praxis um und ist sozusagen das am naheligenste Backend für EO-Daten
 
 * Cloud Provider
 * gefördert von der ESA
@@ -87,9 +87,33 @@ OpenEO Platform ist eine Implementierung der OpenEO-Spezifikationen. Diese Platf
 
 * OpenEO Community
 
-### Implementierung und Nutzen am Beispiel von R
+### Implementierung und Nutzen am Beispiel von JavaScript
 
-... 
+Um die bereitgestellten Funktionalitäten von OpenEO zu nutzen, muss das programmiersprachenspezifische Package in das Programm eingebunden werden - in diesem Fall mit NPM.
+```bash
+npm install @openeo/js-client
+```
+Das OpenEO Object kan nun importiert werden.
+```js
+const { OpenEO } = require("@openeo/js-client");
+```
+Die **connect** funktion baut nun eine Verbindung zu einem Backend auf und gibt ein [Connection Object](https://open-eo.github.io/openeo-js-client/latest/Connection.html) zurück.
+```js
+const con = await OpenEO.connect("https://earthengine.openeo.org");
+```
+Mit diesem kann man z.B. die Metadaten des Backends abrufen:
+```js
+const metadata = con.capabilities();
+```
+Um auf die zur Verfügung gestellten Daten zuzugreifen werden sogenannte **Collections** benutzt.
+```js
+const collections = await con.listCllections();
+```
+Des Weiteren können noch **Processes** vom Backend bereitgestellt werden oder vom User kreiert werden.
+```js
+const processes = await con.listProcesses();
+```
+Mit diesen können Verschiedene [Funktionen](https://openeo.org/documentation/1.0/processes.html) auf die Daten angewedet werden.
 
 ## Ressourcen und Quellen
 

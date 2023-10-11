@@ -87,7 +87,7 @@ OpenEO Platform ist eine Implementierung der OpenEO-Spezifikationen. Diese Platf
 
 * OpenEO Community
 
-### Implementierung und Nutzen am Beispiel von JavaScript
+## Implementierung und Nutzen am Beispiel von JavaScript
 
 Um die bereitgestellten Funktionalitäten von OpenEO zu nutzen, muss das programmiersprachenspezifische Package in das Programm eingebunden werden - in diesem Fall mit NPM.
 ```bash

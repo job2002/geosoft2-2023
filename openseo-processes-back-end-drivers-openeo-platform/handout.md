@@ -95,7 +95,7 @@ npm install @openeo/js-client
 ```
 Das OpenEO Object kan nun importiert werden.
 ```js
-const { OpenEO } = require("@openeo/js-client");
+const { OpenEO } = require('@openeo/js-client');
 ```
 Die **connect** funktion baut nun eine Verbindung zu einem Backend auf und gibt ein [Connection Object](https://open-eo.github.io/openeo-js-client/latest/Connection.html) zurück.
 ```js
@@ -107,7 +107,7 @@ const metadata = con.capabilities();
 ```
 Um auf die zur Verfügung gestellten Daten zuzugreifen werden sogenannte **Collections** benutzt.
 ```js
-const collections = await con.listCllections();
+const collections = await con.listCollections();
 ```
 Des Weiteren können noch **Processes** vom Backend bereitgestellt werden oder vom User kreiert werden.
 ```js
